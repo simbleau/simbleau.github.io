@@ -5,7 +5,7 @@ permalink: /about/
 ---
 [![CC BY 4.0][cc-by-shield]][cc-by] [![GitHub License][license-by-shield]][license-by]
 
-This is the blog of Spencer Imbleau. I also have a [website](https://spencer.imbleau.com). The opinions expressed here are my own, and are not official statements of my employers.
+This is the blog of Spencer C. Imbleau. I also have a [website](https://spencer.imbleau.com). The opinions expressed here are my own, and are not official statements of my employers.
 
 Posts by category can be found [here](/categories.html).
 
