@@ -9,7 +9,7 @@ This is the blog of Spencer C. Imbleau. I also have a [website](https://spencer.
 
 Posts by category can be found [here](/categories.html).
 
-You can find the source for this blog on [https://github.com/simbleau/simbleau.github.io](https://github.com/simbleau/simbleau.github.ioo). [Pulls](https://github.com/simbleau/simbleau.github.io/pulls) are welcome, as are [issues](https://github.com/simbleau/simbleau.github.io/issues). Issues are also used to track ideas.\
+You can find the source for this blog on [https://github.com/simbleau/simbleau.github.io](https://github.com/simbleau/simbleau.github.io). [Pulls](https://github.com/simbleau/simbleau.github.io/pulls) are welcome, as are [issues](https://github.com/simbleau/simbleau.github.io/issues). Issues are also used to track ideas.\
 The [Contributer Covenant](https://www.contributor-covenant.org/version/2/0/code_of_conduct/) applies.
 
 [cc-by]: http://creativecommons.org/licenses/by/4.0/
