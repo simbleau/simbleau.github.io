@@ -16,6 +16,7 @@ This blog is served with [Rust](https://rust-lang.org) using the [Zola](https://
 
 ## Serve
 - Clone repo: `git clone https://github.com/simbleau/simbleau.github.io.git`
+- Init submodules: `git submodule update --init --recursive`
 - Change directories: `cd zola`
 - Serve: `zola serve`
 - Preview: `http://localhost:1111` ✅ hot-reloading
