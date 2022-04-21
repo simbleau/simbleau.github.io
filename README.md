@@ -20,7 +20,7 @@ This blog is served with [Rust](https://rust-lang.org) using the [Zola](https://
 - Init submodules: `git submodule update --init --recursive`
 - Change directories: `cd zola`
 - Serve: `zola serve`
-- Preview: `http://localhost:1111` ✅ hot-reloading
+- Preview: [`http://localhost:1111`](http://localhost:1111) ✅ hot-reloading
 
 # License
 This project is licensed under [MIT](LICENSE-MIT), except [blog content](#citing-blog-content), which is copyright under [CC-BY](LICENSE-CC-BY). In other words, you may fork the repository and use my code in permissive ways, however you must [cite](#citing-blog-content) content from one of my blog posts. ❤️
