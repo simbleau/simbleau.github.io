@@ -1,2 +1,5 @@
 # Ignore hot-reload files
-/zola/public
+/zola/public/
+
+# Ignore themes - They are submoduled
+/zola/themes/
