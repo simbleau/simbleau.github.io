@@ -28,8 +28,6 @@ external_links_no_referrer = false # rel="noreferrer"
 smart_punctuation = false          # `...` to `…`, `"quote"` to `“curly”` etc
 
 [extra]
-katex_enable = false # used to to render mathematical notations, requires js
-katex_auto_render = false
 recent = true
 recent_items = 6
 footer_credit = false
@@ -38,6 +36,8 @@ footer_credit = false
 textlogo = 'Spencer C. Imbleau'
 sitedesc = false # enables or disables the display of the site description below the logo.
 author = "Spencer C. Imbleau"
+author_show = false # displays the author name below the title after the date, tags, categories
+readtime = true # displays the read time below the title after the date, tags, categories
 favicon = "favicon.ico"
 banner = "card.png"
 menu = [
@@ -55,6 +55,9 @@ menu_footer = [
 ]
 copyright_start_year = 2021  # optional
 #copyright_end_year = 2020  # optional, recommend leaving unset, zola build will set this to current year by default
+
+katex_enable = false # used to to render mathematical notations, requires js
+katex_auto_render = false
 
 # meta tags
 keywords = "blog, kubernetes, k8s, cloud, rust"
