@@ -1,18 +1,13 @@
 +++
-title = "Hello World"
-description = "The \"O brave new world\" of someone less poetic."
+title = "hello world."
 date = 2021-05-30T00:00:00+00:00
-updated = 2022-04-21T08:00:00+00:00
-draft = false
-template = "blog/page.html"
 
 [taxonomies]
-authors = ["Spencer C. Imbleau"]
-
-[extra]
-lead = "The \"<i>O brave new world</i>\" for a geek."
 +++
 
+The "O brave new world" of someone less poetic.
+
+<!-- more -->
 ```rust
 fn main() {
     println!("Hello World!");

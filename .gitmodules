@@ -1,3 +1,3 @@
-[submodule "zola/themes/adidoks"]
-	path = zola/themes/adidoks
-	url = https://github.com/aaranxu/adidoks.git
+[submodule "zola/themes/abridge"]
+	path = zola/themes/abridge
+	url = https://github.com/jieiku/abridge.git
