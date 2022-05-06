@@ -79,20 +79,20 @@ library = "katex"  # options: "katex", "mathjax". default is "katex".
 [extra.open]
 enable = true
 # this image will be used as fallback if a page has no image of its own
-image = "doks.png"
-twitter_site = "aaranxu"
-twitter_creator = "aaranxu"
-facebook_author = "ichunyun"
-facebook_publisher = "ichunyun"
+image = "card.png"
+twitter_site = "spencerimbleau"
+twitter_creator = "spencerimbleau"
+facebook_publisher = ""
+facebook_author = ""
 og_locale = "en_US"
 
 ## JSON-LD
 [extra.schema]
 type = "Organization"
-logo = "logo-doks.png"
-twitter = "https://twitter.com/aaranxu"
-linked_in = ""
-github = "https://github.com/aaranxu"
+logo = "logo-blog.png"
+twitter = "https://twitter.com/spencerimbleau"
+linked_in = "https://linkedin.com/in/simbleau"
+github = "https://github.com/simbleau"
 section = "blog" # see config.extra.main~url
 ## Sitelinks Search Box
 site_links_search_box = true
@@ -102,7 +102,7 @@ site_links_search_box = true
 [[extra.menu.main]]
 name = "Docs"
 section = "docs"
-url = "/docs/getting-started/introduction/"
+url = "/docs/"
 weight = 10
 
 [[extra.menu.main]]
@@ -126,7 +126,7 @@ weight = 20
 
 # Footer contents
 [extra.footer]
-info = 'Powered by <a href="https://rust-lang.org">Rust</a>, <a href="https://www.getzola.org/">Zola</a>, and <a href="https://github.com/aaranxu/adidoks">AdiDoks</a>'
+info = '<div style="display: flex; align-items: center"><span>Written in</span><img style="height: 1em; margin: 0 5px 0 5px" src="./fontawesome/code-solid.svg"><span><a href="https://rust-lang.org">Rust</a> with love</span><img style="height: 1em; margin: 0 5px 0 5px" src="./fontawesome/heart-solid.svg"></div>'
 
 [[extra.footer.nav]]
 name = "Privacy"
