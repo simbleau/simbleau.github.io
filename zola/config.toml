@@ -1,7 +1,7 @@
 # The URL the site will be built for
 base_url = "https://simbleau.github.io"
-title = "Spencer C. Imbleau"
-description = "The blog of Spencer C. Imbleau"
+title = "Spencer C. Imbleau's Blog"
+description = "Technology with human factors"
 
 # The site theme to use.
 theme = "adidoks"
