@@ -14,5 +14,3 @@ draft = false
 [extra.author_pages]
 "Spencer C. Imbleau" = "authors/simbleau.md"
 +++
-
-The authors of blog articles.
