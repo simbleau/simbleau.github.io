@@ -95,7 +95,7 @@ linked_in = ""
 github = "https://github.com/aaranxu"
 section = "blog" # see config.extra.main~url
 ## Sitelinks Search Box
-site_links_search_box = false
+site_links_search_box = true
 
 
 # Menu items

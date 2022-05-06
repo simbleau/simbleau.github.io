@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="1280mm"
+   height="640mm"
+   viewBox="0 0 1280 640"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1.2 (08b2f3d93c, 2022-04-05)"
+   sodipodi:docname="card.svg"
+   inkscape:export-filename="/home/simbleau/git/resume/coverletter/static/graphics/signature.png"
+   inkscape:export-xdpi="76.229134"
+   inkscape:export-ydpi="76.229134"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="0.1184265"
+     inkscape:cx="2676.7659"
+     inkscape:cy="1085.0612"
+     inkscape:window-width="1920"
+     inkscape:window-height="941"
+     inkscape:window-x="980"
+     inkscape:window-y="34"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0" />
+  <defs
+     id="defs2">
+    <rect
+       x="483.1398"
+       y="412.27059"
+       width="3842.5621"
+       height="860.74821"
+       id="rect3302" />
+  </defs>
+  <g
+     inkscape:label="Image"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-13.785015,-149.26375)">
+    <rect
+       style="fill:#f9f9f9;fill-opacity:1;stroke-width:6.28038;stroke-linecap:square"
+       id="rect1039"
+       width="1280"
+       height="640"
+       x="13.785015"
+       y="149.26375"
+       inkscape:label="Background" />
+    <g
+       id="g17455"
+       transform="translate(47.994005,255.71104)"
+       inkscape:label="Bounding">
+      <text
+         xml:space="preserve"
+         transform="matrix(0.26458333,0,0,0.26458333,233.41406,43.676406)"
+         id="text3300"
+         style="font-style:normal;font-weight:normal;font-size:266.667px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect3302);fill:#1a1a1a;fill-opacity:1;stroke:none"
+         inkscape:label="Text"><tspan
+           x="483.14062"
+           y="661.07179"
+           id="tspan17503"><tspan
+             dx="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -0.00010681152"
+             style="font-family:cerapro;-inkscape-font-specification:cerapro"
+             id="tspan17501">Spencer C. Imbleau</tspan></tspan></text>
+      <g
+         id="g17448"
+         transform="translate(213.78501,149.26375)"
+         inkscape:label="Logo">
+        <path
+           d="m 50,42.084 c -4.372,0 -7.916,3.544 -7.916,7.916 0,3.81 2.693,6.99 6.279,7.744 V 99.958 C 48.908,99.976 49.451,100 50,100 c 0.549,0 1.092,-0.024 1.637,-0.041 V 57.744 C 55.223,56.99 57.916,53.81 57.916,50 57.916,45.628 54.372,42.084 50,42.084 Z"
+           id="path17436" />
+        <path
+           d="M 100,50 C 100,22.386 77.614,0 50,0 22.386,0 0,22.386 0,50 0,75.954 19.777,97.285 45.082,99.757 v 0 l 10e-4,-0.009 v 0 C 44.958,79.426 32.708,63.73 27.626,58.087 v -0.002 c 0,0 -2.087,-2.503 -0.905,-5.503 l 9.256,-23.476 c 0,0 1.713,-4.34 5.517,-4.34 H 50 58.506 c 3.805,0 5.517,4.34 5.517,4.34 l 9.256,23.476 c 1.183,3 -0.905,5.503 -0.905,5.503 v 0.002 C 67.292,63.731 55.042,79.426 54.918,99.748 l 10e-4,0.009 C 80.224,97.285 100,75.954 100,50 Z"
+           id="path17438" />
+      </g>
+    </g>
+  </g>
+</svg>
