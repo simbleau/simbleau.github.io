@@ -1,15 +1,14 @@
 +++
 title = "hello world."
+description = 'The "O brave new world" of someone less poetic.'
 date = 2021-05-30T00:00:00+00:00
 
 [taxonomies]
 +++
 
-The "O brave new world" of someone less poetic.
-
-<!-- more -->
 ```rust
 fn main() {
+    // The "O brave new world" of someone less poetic.
     println!("Hello World!");
 }
 ```
