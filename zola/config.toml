@@ -64,6 +64,13 @@ keywords = "blog, kubernetes, k8s, cloud, rust"
 twitter = "spencerimbleau"
 seo = true  # enable or disable seo-related meta tags: opengraph, facebook, twitter
 
+# fonts
+fonts_load = true
+fonts = [
+    {url = "https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Source+Code+Pro"},
+    {url = "FiraCode-Regular.woff2"},
+]
+
 # Footer social links; full options listed in macros/social.html
 [extra.social]
 feed = true
