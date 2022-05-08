@@ -129,7 +129,7 @@ I recommend if you go this route, you also add a `$REPO/.vscode/extensions.json`
 
 ---
 # Exercise
-Write me a message using [my public keys](https://github.com/simbleau.keys) as recipients of a message, and paste your message in the merge request for this blog. Only I will be able to decrypt it, and for the first three individuals, I will respond with a payload only you can decrypt, containing an access code to a technical community of likeminded individuals, assuming you want to join.
+Write me a message using [my public keys](https://github.com/simbleau.keys) as recipients of a message, and paste your message in [the merge request](https://github.com/simbleau/simbleau.github.io/pull/8) for this blog. Only I will be able to decrypt it, and for the first three individuals, I will respond with a payload only you can decrypt, containing an access code to a technical community of likeminded individuals, assuming you want to join.
 
 <details>
     <summary>Hint 1</summary>
