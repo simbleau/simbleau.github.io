@@ -1,5 +1,5 @@
 +++
-title = "hello world."
+title = "Hello world"
 description = 'The "O brave new world" of someone less poetic.'
 date = 2021-05-30T00:00:00+00:00
 
