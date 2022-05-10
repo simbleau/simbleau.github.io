@@ -1,9 +1,9 @@
+# General config
 base_url = "https://blog.imbleau.com"
 title = "Spencer C. Imbleau"
-description = "Human factoring for non-human issues"
+description = "Technology with human factors"
 default_language = "en"
 theme = "abridge"
-
 output_dir = "public"
 compile_sass = true
 build_search_index = true
@@ -17,29 +17,22 @@ taxonomies = [
     {name = "tags", feed = true},
 ]
 
-[markdown]
-highlight_code = true
-highlight_theme = "material-dark" # OneHalfDark, material-dark, ayu-dark, Midnight.dark
-#highlight_theme = "css" # use css classes - https://www.getzola.org/documentation/content/syntax-highlighting/#inline-vs-classed-highlighting
-render_emoji = true
-external_links_target_blank = true # rel="noopener"
-external_links_no_follow = false   # rel="nofollow"
-external_links_no_referrer = false # rel="noreferrer"
-smart_punctuation = false          # `...` to `…`, `"quote"` to `“curly”` etc
-
 [extra]
+language_code = "en-US"
+author = "Spencer C. Imbleau"
+author_show = false # displays the author name below the title after the date, tags, categories
+readtime = true # displays the read time on line with date, tags, categories
+readtime_string = "min read" # read time indication eg "min": - 1 min  "min read": - 1 min read
 recent = true
 recent_items = 6
 footer_credit = false
-#google = "Your Google Site verification code."
-#bing = "Your Bing Site verification code."
+katex_enable = false # used to to render mathematical notations, requires js
+katex_auto_render = false
+
 textlogo = 'Spencer C. Imbleau'
 sitedesc = false # enables or disables the display of the site description below the logo.
-author = "Spencer C. Imbleau"
-author_show = false # displays the author name below the title after the date, tags, categories
-readtime = true # displays the read time below the title after the date, tags, categories
-favicon = "favicon.ico"
-banner = "card.png"
+copyright_start_year = 2021  # optional
+#copyright_end_year = 2020  # optional, recommend leaving unset, zola build will set this to current year by default
 menu = [
     {url = "/", name = "Home", slash = true},
     {url = "/about/", name = "About", slash = true},
@@ -53,23 +46,36 @@ menu_footer = [
     {url = "/privacy/", name = "Privacy", slash = true},
     {url = "/sitemap.xml", name = "Sitemap", slash = false},
 ]
-copyright_start_year = 2021  # optional
-#copyright_end_year = 2020  # optional, recommend leaving unset, zola build will set this to current year by default
 
-katex_enable = false # used to to render mathematical notations, requires js
-katex_auto_render = false
-
-# meta tags
-keywords = "blog, kubernetes, k8s, cloud, rust"
-twitter = "spencerimbleau"
-seo = true  # enable or disable seo-related meta tags: opengraph, facebook, twitter
-
-# fonts
-fonts_load = true
+fonts_load = true # used to import fonts
 fonts = [
-    {url = "https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Source+Code+Pro"},
-    {url = "FiraCode-Regular.woff2"},
+    {url = "font/FiraCode-Regular.woff2"},
 ]
+
+# SEO
+seo = true  # enable or disable seo-related meta tags: opengraph, facebook, twitter
+twitter = "spencerimbleau"
+keywords = "blog, kubernetes, k8s, cloud, rust"
+#google = "Your Google Site verification code."
+#bing = "Your Bing Site verification code."
+
+# Favicons
+favicon = "favicon.ico"
+banner = "card.png"
+favicon_theme_color = "#333333"
+favicon_ms_color = "#333333"
+favicon_webmanifest = "site.webmanifest" # Used for android-chrome-512x512.png and android-chrome-192x192.png
+favicon_mask = "safari-pinned-tab.svg" # safari-pinned-tab.svg
+favicon_mask_color = "#000000"
+favicon180 = "apple-touch-icon.png" # apple-touch-icon.png
+favicon32 = "favicon-32x32.png" # favicon-32x32.png
+favicon16 = "favicon-16x16.png" # favicon-16x16.png
+
+# Resources
+stylesheet = "abridge-light.css" # location and file to use for stylesheet
+js_search_index ="search_index.en.js"
+js_search = "search.min.js"
+rss_atom_feed = "atom.xml"
 
 # Footer social links; full options listed in macros/social.html
 [extra.social]
@@ -79,3 +85,13 @@ twitter = "spencerimbleau"
 linkedin = "simbleau"
 github = "simbleau"
 youtube = "UCj9vVqSQlGZbU0c8Dtnpgug"
+
+[markdown]
+highlight_code = true
+highlight_theme = "material-dark" # OneHalfDark, material-dark, ayu-dark, Midnight.dark
+#highlight_theme = "css" # use css classes - https://www.getzola.org/documentation/content/syntax-highlighting/#inline-vs-classed-highlighting
+render_emoji = true
+external_links_target_blank = true # rel="noopener"
+external_links_no_follow = false   # rel="nofollow"
+external_links_no_referrer = false # rel="noreferrer"
+smart_punctuation = false          # `...` to `…`, `"quote"` to `“curly”` etc
