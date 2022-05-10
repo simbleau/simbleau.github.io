@@ -84,7 +84,9 @@ mail = "spencer@imbleau.com"
 twitter = "spencerimbleau"
 linkedin = "simbleau"
 github = "simbleau"
-youtube = "UCj9vVqSQlGZbU0c8Dtnpgug"
+github_sponsor = "simbleau"
+buymeacoffee = "simbleau"
+researchgate = "Spencer-Imbleau"
 
 [markdown]
 highlight_code = true
