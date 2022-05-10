@@ -25,7 +25,8 @@ readtime = true # displays the read time on line with date, tags, categories
 readtime_string = "min read" # read time indication eg "min": - 1 min  "min read": - 1 min read
 recent = true
 recent_items = 6
-footer_credit = false
+footer_credit = true
+footer_credit_override = '<i>Built in Rust with no JS. View on <a href="https://github.com/simbleau/simbleau.github.io"><u>GitHub</u></a>.</i>'
 katex_enable = false # used to to render mathematical notations, requires js
 katex_auto_render = false
 
@@ -47,7 +48,7 @@ menu_footer = [
     {url = "/sitemap.xml", name = "Sitemap", slash = false},
 ]
 
-fonts_load = true # used to import fonts
+fonts_load = false # used to import fonts
 fonts = [
     {url = "font/FiraCode-Regular.woff2"},
 ]
