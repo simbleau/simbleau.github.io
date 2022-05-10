@@ -56,9 +56,9 @@ let encrypted = {
 ```
 
 ## SOPS
-There's also some great tooling for preserving the original file structure. Mozilla's [Secret OPerationS (*SOPS*)](https://github.com/mozilla/sops) product encrypts the values of certain files, but not the keys. SOPS supports favorite formats like YAML, JSON, ENV, and INI but also works with BINARY formats.
+There is also tooling to preserve the original file structure during encryption. Mozilla's [Secret OPerationS (*SOPS*)](https://github.com/mozilla/sops) encrypts the values of certain files, but not the keys. SOPS supports favorite formats like YAML, JSON, ENV, and INI but also works with BINARY formats.
 
-To get the point across, here is what an age encrypted file looks like:
+To get the point across, here is what an age encrypted file typically looks like:
 ```text
 age-encryption.org/v1                                   <-- Age version
 -> X25519 3tu9gP/qdJ+RjTFe0HS0M9ROyYrKice+V+6p6Ugr1mY   <-- Recipient Stanza
@@ -66,7 +66,7 @@ age-encryption.org/v1                                   <-- Age version
 --- YG8EY5Re2TWV1Y1L66bd2i1zv68lJn4sjqRKpcC7N9Q         <-- Payload
 ```
 
-With the magic of SOPS (`sops -e -i my.yaml`), a YAML file can turn still maintain its key structure, while encrypting the values.
+And with the magic of SOPS (`sops -e -i my.yaml`), a YAML file can still maintain its key structure, while encrypting the values.
 
 <table style='table-layout: fixed;'>
 <tr>
@@ -139,7 +139,7 @@ Write me a message using [my public keys](https://github.com/simbleau.keys) as r
 
 <details>
     <summary>Hint 2</summary>
-    <p>You will need armor to post an age contents on GitHub.</p>
+    <p>You will need *armor* to post age encrypted contents in plain-text (on GitHub).</p>
 </details>
 
 *Farvel! Until next time.*
