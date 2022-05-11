@@ -8,7 +8,7 @@ categories = ["Rust"]
 tags = ["rust", "cryptography"]
 +++
 
-Encryption seemingly has a lot of options - AES, RSA, PGP, etc. But what expectations are there for developers, who otherwise do not have a background in cyber security, to understand about cryptography? Well, aside from GitHub's requirement of SSH keys, probably little.
+Encryption seemingly comes with many terms - AES, RSA, PGP, etc. But what expectations are there for developers, who otherwise do not have a background in cyber security, to understand about cryptography? Well, aside from GitHub's requirement of SSH keys, probably little.
 
 This blog will be about *age*, a new file encryption tool which is stupidly simple and delivers fearless, modern encryption. Age is ready today, and is starting to see acceptance fast[^acceptance].
 
