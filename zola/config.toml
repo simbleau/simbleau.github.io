@@ -73,7 +73,7 @@ favicon32 = "favicon-32x32.png" # favicon-32x32.png
 favicon16 = "favicon-16x16.png" # favicon-16x16.png
 
 # Resources
-stylesheet = "abridge-light.css" # location and file to use for stylesheet
+stylesheet = "abridge-bluelight.css" # location and file to use for stylesheet
 js_search_index ="search_index.en.js"
 js_search = "search.min.js"
 rss_atom_feed = "atom.xml"
