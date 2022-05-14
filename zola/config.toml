@@ -36,7 +36,7 @@ copyright_start_year = 2021  # optional
 #copyright_end_year = 2020  # optional, recommend leaving unset, zola build will set this to current year by default
 menu = [
     {url = "/", name = "Home", slash = true},
-    {url = "/about/", name = "About", slash = true},
+    {url = "/donate/", name = "Donate", slash = true},
     {url = "/posts/", name = "Posts", slash = true},
     {url = "/categories/", name = "Categories", slash = true},
     {url = "/tags/", name = "Tags", slash = true},
