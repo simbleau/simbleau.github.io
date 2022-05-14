@@ -35,17 +35,17 @@ sitedesc = false # enables or disables the display of the site description below
 copyright_start_year = 2021  # optional
 #copyright_end_year = 2020  # optional, recommend leaving unset, zola build will set this to current year by default
 menu = [
-    {url = "/", name = "Home", slash = true},
-    {url = "/donate/", name = "Donate", slash = true},
-    {url = "/posts/", name = "Posts", slash = true},
-    {url = "/categories/", name = "Categories", slash = true},
-    {url = "/tags/", name = "Tags", slash = true},
+    {url = "/", name = '<i class="fa-solid fa-house"></i> Home', slash = true},
+    {url = "/donate/", name = '<i class="fa-solid fa-circle-dollar-to-slot"></i> Donate', slash = true},
+    {url = "/posts/", name = '<i class="fa-solid fa-book"></i> Posts', slash = true},
+    {url = "/categories/", name = '<i class="fa-solid fa-layer-group"></i> Categories', slash = true},
+    {url = "/tags/", name = '<i class="fa-solid fa-tags"></i> Tags', slash = true},
 ]
 menu_footer = [
-    {url = "/", name = "Home", slash = true},
-    {url = "/about/", name = "About", slash = true},
-    {url = "/privacy/", name = "Privacy", slash = true},
-    {url = "/sitemap.xml", name = "Sitemap", slash = false},
+    {url = "/", name = '<i class="fa-solid fa-house"></i> Home', slash = true},
+    {url = "/about/", name = '<i class="fa-solid fa-circle-info"></i> About', slash = true},
+    {url = "/privacy/", name = '<i class="fa-solid fa-user-secret"></i> Privacy', slash = true},
+    {url = "/sitemap.xml", name = '<i class="fa-solid fa-map-location-dot"></i> Sitemap', slash = false},
 ]
 
 fonts_load = false # used to import fonts
