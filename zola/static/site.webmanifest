@@ -1,6 +1,8 @@
 {
-    "name": "",
-    "short_name": "",
+    "name": "Spencer C. Imbleau's Blog",
+    "short_name": "Spencer's Blog",
+    "start_url": "https://spencer.imbleau.com/blog",
+    "description": "Insights on modern technology.",
     "icons": [
         {
             "src": "/android-chrome-192x192.png",
