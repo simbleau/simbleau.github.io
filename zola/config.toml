@@ -48,7 +48,7 @@ menu_footer = [
     {url = "/sitemap.xml", name = '<i class="fa-solid fa-map-location-dot"></i> Sitemap', slash = false},
 ]
 
-fonts_load = true # used to import fonts
+fonts_load = false # used to import fonts
 fonts = [
     {url = "fonts.css"},
 ]
