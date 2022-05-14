@@ -59,15 +59,14 @@ twitter = "spencerimbleau"
 keywords = "blog, kubernetes, k8s, cloud, rust"
 #google = "Your Google Site verification code."
 #bing = "Your Bing Site verification code."
+banner = "banner.png" # Used for embedding cards
 
 # Favicons
-favicon = "favicon.ico"
-banner = "card.png"
-favicon_theme_color = "#333333"
-favicon_ms_color = "#333333"
+favicon_theme_color = "#fafafa"
+favicon_ms_color = "#fafafa"
 favicon_webmanifest = "site.webmanifest" # Used for android-chrome-512x512.png and android-chrome-192x192.png
-favicon_mask = "safari-pinned-tab.svg" # safari-pinned-tab.svg
-favicon_mask_color = "#000000"
+#favicon_mask = "safari-pinned-tab.svg" # safari-pinned-tab.svg
+#favicon_mask_color = "#ff9900"
 favicon180 = "apple-touch-icon.png" # apple-touch-icon.png
 favicon32 = "favicon-32x32.png" # favicon-32x32.png
 favicon16 = "favicon-16x16.png" # favicon-16x16.png
