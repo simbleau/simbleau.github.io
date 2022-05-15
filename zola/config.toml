@@ -1,7 +1,7 @@
 # General config
 base_url = "https://blog.imbleau.com"
 title = "Spencer C. Imbleau"
-description = "Technology with human factors"
+description = "Insights on modern technology."
 default_language = "en"
 theme = "abridge"
 output_dir = "public"
@@ -73,7 +73,7 @@ favicon16 = "favicon-16x16.png" # favicon-16x16.png
 
 # Resources
 fontawesome = "https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"
-stylesheet = "abridge-bluelight.css" # location and file to use for stylesheet
+stylesheet = "abridge-blue.css" # location and file to use for stylesheet
 js_search_index ="search_index.en.js"
 js_search = "search.min.js"
 rss_atom_feed = "atom.xml"
