@@ -43,7 +43,7 @@ Jekyll is one of the best simple, blog-aware solutions. It does a great job at o
 <div align="center">
 <img alt="Raph's Lighthouse metrics" src="raph_seo.png" style="max-height: 100px;"/>
 
-*[Click here for the full report](raphlinus.github.io_2022-05-15_10-46-19.html)*.
+*[Click here for the full report](raphlinus.github.io_2022-05-15_10-46-19.html)*
 </div>
 
 ## Security
@@ -77,6 +77,8 @@ Abridge is, in my opinion, ready for wide adoption. Specifically, this theme is 
 <td>
 <div align="center">
     <img alt="Abridge Lighthouse score" src="abridge_seo.png" style="max-height: 300px;"/>
+
+*[Click here for the full report](jieiku.github.io_2022-05-17_18-56-57.html)*
 </div>
 </td>
 <td>
