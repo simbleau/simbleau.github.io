@@ -6,6 +6,8 @@ description = "A dive into age, the tool offering simple, modern, and secure enc
 [taxonomies]
 categories = ["Rust"]
 tags = ["rust", "cryptography"]
+[extra]
+toc = true
 +++
 
 Encryption seemingly comes with many terms - AES, RSA, PGP, etc. But what expectations are there for developers, who otherwise do not have a background in cyber security, to understand about cryptography? Well, aside from GitHub's requirement of SSH keys, probably little.
