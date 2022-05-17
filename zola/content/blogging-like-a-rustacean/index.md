@@ -135,7 +135,7 @@ There are some common pitfalls I would like to point out.
 # GitHub Actions
 My favorite aspect of this tech stack is the autonomy. GitHub Actions is able to verify and deploy your Zola website with ease. If you push to your master branch and it's all good - you should see the changes on your deployment quickly! Otherwise, your blog is safe. The authors of Zola have included a very easy GitHub Action to help you deploy, batteries included.
 
-You can see my actual workflow, but here is a minimal example:
+You can see [my actual workflow](https://github.com/simbleau/simbleau.github.io/blob/main/.github/workflows/gh-pages.yml), but here is a minimal example:
 ```yaml
 on: push
 name: Build and deploy GH Pages
@@ -163,7 +163,7 @@ Once your deployment is working, I have some recommendations for creating conten
 # Exercise
 Align with a trend I'm patternizing, I include an exercise with an opportunity to join a technical community of likeminded individuals, if you want to join.
 
-The exercise is to start a Zola site using the Abridge theme, deployed with CI such as GitHub Actions. If you already have a blog or static site, convert your current deployment. Write your site's URL in a comment on [the merge request for this blog](https://github.com/simbleau/simbleau.github.io/pull/9), and for the first three individuals, I will present an invitation only you can accept. No hints this time, sorry.
+The exercise is to start a Zola site using the Abridge theme, deployed with CI such as GitHub Actions. If you already have a blog or static site, convert your current deployment. Write your site's URL in a comment on [the merge request for this blog](https://github.com/simbleau/simbleau.github.io/pull/9), and for the first three individuals, I will present an invitation only you can accept. No hints this time, sorry!
 
 Farvel! Until next time.
 
