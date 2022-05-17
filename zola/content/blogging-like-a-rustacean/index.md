@@ -161,7 +161,7 @@ Once your deployment is working, I have some recommendations for creating conten
 # Exercise
 Align with a trend I'm patternizing, I include an exercise with an opportunity to join a technical community of likeminded individuals, if you want to join.
 
-The exercise is to start a Zola site using the Abridge theme, deployed with CI such as GitHub Actions. If you already have a blog or static site, convert your current deployment. Write your site's URL in a comment on the merge request for this blog, and for the first three individuals, I will present an invitation only you can accept. No hints this time, sorry.
+The exercise is to start a Zola site using the Abridge theme, deployed with CI such as GitHub Actions. If you already have a blog or static site, convert your current deployment. Write your site's URL in a comment on [the merge request for this blog](https://github.com/simbleau/simbleau.github.io/pull/9), and for the first three individuals, I will present an invitation only you can accept. No hints this time, sorry.
 
 Farvel! Until next time.
 
