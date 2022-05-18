@@ -72,8 +72,8 @@ And with the magic of SOPS (`sops -e -i my.yaml`), a YAML file can still maintai
 
 <table style='table-layout: fixed;'>
 <tr>
-<th style='width: 50%;'> Plain-text </th>
-<th style='width: 50%;'> SOPS + age </th>
+Plain-text
+SOPS + age
 </tr>
 <tr>
 <td>
