@@ -73,7 +73,7 @@ favicon16 = "favicon-16x16.png" # favicon-16x16.png
 
 # Resources
 fontawesome = "https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"
-stylesheet = "abridge-blue.css" # location and file to use for stylesheet
+stylesheet = "abridge-bluelight.css" # location and file to use for stylesheet
 js_search_index ="search_index.en.js"
 js_search = "search.min.js"
 rss_atom_feed = "atom.xml"
@@ -96,7 +96,7 @@ researchgate = "Spencer-Imbleau"
 
 [markdown]
 highlight_code = true
-highlight_theme = "material-dark" # OneHalfDark, material-dark, ayu-dark, Midnight.dark
+highlight_theme = "ayu-light" # OneHalfDark, material-dark, ayu-dark, Midnight.dark
 #highlight_theme = "css" # use css classes - https://www.getzola.org/documentation/content/syntax-highlighting/#inline-vs-classed-highlighting
 render_emoji = true
 external_links_target_blank = true # rel="noopener"
