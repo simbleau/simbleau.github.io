@@ -1,7 +1,7 @@
 +++
 title = "Blogging like a rustacean"
-date = 2022-05-15T00:00:00+00:00
-description = "A blogging tech stack for Rustaceans with no money to spend."
+date = 2022-05-17T00:00:00+00:00
+description = "Insights into the technologies used to deliver this blog with Rust, and with better performance, SEO, accessibility, and security than its competitor, Jekyll."
 
 [taxonomies]
 categories = ["Rust"]
@@ -11,7 +11,7 @@ toc = true
 +++
 
 # Overview
-Look around! This blog is generated with Rust and no Javascript. This post will be about explorations in creating a static site with a Rusty stack, for free. We will also show, with proveable evidence, how our proposed tech stack supersedes aspects of Jekyll.
+Look around! This blog is generated with Rust and no Javascript. This post will be explorating how this blog is generated with better performance, accessibility, and SEO than its competitior, Jekyll. We will also show, with proveable evidence, how our proposed tech stack supersedes those aspects.
 
 # Jekyll?
 [Jekyll](https://jekyllrb.com/) was written in Ruby and is the most popular static site generator (SSG) in use. The SSG ingests [Markdown](https://markdown-it.github.io/) formatted text and uses templates to generate a static website. This is ideal for those who need to quickly publish thoughts with nice formatting. [GitHub Pages](https://pages.github.com/) is *powered* by Jekyll[^ghpages_poweredby], and GitHub will use Jekyll to build your site by default[^github_rec]. These reasons and special privilege make Jekyll a ~~safe~~ popular option for most users.
