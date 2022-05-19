@@ -21,13 +21,13 @@ The general workflow is to install Jekyll, create a project, build it, and host 
 # Technologies
 It's time to introduce the components that get taped together to present what you see now and de-obfuscate the magic. We install [Zola](https://www.getzola.org/) as a Rust-alternative SSG to Jekyll. Contrary to Jekyll, Zola makes 0 assumptions about your content, and requires a "*theme*" to tell it how to use generate static sites, providing flexibility can benefit from. We pair *Jieiku*'s "[Abridge](https://github.com/Jieiku/abridge)" theme with Zola for its maturity and design in blogging. We also will explain how to get free hosting through [GitHub Pages](https://pages.github.com/), offer a continuous integration strategy through [GitHub Actions](https://github.com/features/actions), and additional tools. The technologies are named below.
 
-| Name | Purpose |
-| ---- | ------- |
-| [Zola](https://www.getzola.org/) | SSG written in Rust |
-| [Abridge](https://github.com/Jieiku/abridge) | Zola theme (No JS) |
-| [GitHub Pages](https://pages.github.com/) | Free hosting for static sites |
-| [GitHub Actions](https://github.com/features/actions)\* | CI/CD for Zola |
-| [LetsMarkdown](https://letsmarkdown.com/)\* | Markdown collaboration tool written in Rust |
+| Name                                                    | Purpose                                     |
+| ------------------------------------------------------- | ------------------------------------------- |
+| [Zola](https://www.getzola.org/)                        | SSG written in Rust                         |
+| [Abridge](https://github.com/Jieiku/abridge)            | Zola theme (No JS)                          |
+| [GitHub Pages](https://pages.github.com/)               | Free hosting for static sites               |
+| [GitHub Actions](https://github.com/features/actions)\* | CI/CD for Zola                              |
+| [LetsMarkdown](https://letsmarkdown.com/)\*             | Markdown collaboration tool written in Rust |
 
 \* Optional
 
@@ -84,12 +84,12 @@ Abridge is, in my opinion, ready for wide adoption. Specifically, this theme is 
 <td>
 
 <!-- Statistics -->
-| Audit | Jekyll | Abridge | Gain |
-| ----- | ------ | ------- | ---- |
-| Performance | 95 | 100 | 5.00% |
-| Accessibility | 97 | 100 | 3.00% |
-| Best Practices | 100 | 100 | Same |
-| SEO | 99 | 100 | 1.00% |
+| Audit          | Jekyll | Abridge | Gain  |
+| -------------- | ------ | ------- | ----- |
+| Performance    | 95     | 100     | 5.00% |
+| Accessibility  | 97     | 100     | 3.00% |
+| Best Practices | 100    | 100     | Same  |
+| SEO            | 99     | 100     | 1.00% |
 
 </td>
 </tr>
@@ -111,11 +111,11 @@ Security was also improved for common free hosting. One of the complex issues wi
 <td>
 
 <!-- Statistics -->
-| Audit | Jekyll | Abridge | Gain |
-| ----- | ------ | ------- | ---- |
-| Grade | F | B- | N/A |
-| Score | 20/100 | 65/100 | 45.00% |
-| Tests Passed | 6/11 | 8/11 | 18.18% |
+| Audit        | Jekyll | Abridge | Gain   |
+| ------------ | ------ | ------- | ------ |
+| Grade        | F      | B-      | N/A    |
+| Score        | 20/100 | 65/100  | 45.00% |
+| Tests Passed | 6/11   | 8/11    | 18.18% |
 
 </td>
 </tr>
