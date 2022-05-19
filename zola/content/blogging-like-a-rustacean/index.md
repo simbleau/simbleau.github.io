@@ -41,16 +41,16 @@ We, as developers, enjoy the ability to fix issues if they arise. Since Jekyll w
 Jekyll is one of the best simple, blog-aware solutions. It does a great job at optimizing search engine optimization (SEO), accessibility, and performance out of the box using best practice. But is it *the best*? [Google Lighthouse](https://web.dev/measure/) provides expert analysis on what is *the best*, so it will serve as our analytic framework. When measuring several blogs with Jekyll, off-nominal results were recorded. For evidence, I will pick on [Raph Levien's blog](https://raphlinus.github.io). He is a friend and active publisher in the Rust community, well known for his work on [Xi](https://xi-editor.io/), [Druid](https://github.com/linebender/druid), and [Piet](https://github.com/linebender/piet). Measuring his Jekyll blog is a good example, as there are several points missing from a perfect score. Since Zola makes no content assumptions, we can attack these last few points in a Zola theme and abuse the finer control given to us.
 
 <div align="center">
-<img alt="Raph's Lighthouse metrics" src="raph_seo.png" style="max-height: 100px;"/>
+{{ img(path="./raph_seo.png", alt="Raph's Lighthouse metrics") }}
+</div>
 
 *[Click here for the full report](raphlinus.github.io_2022-05-15_10-46-19.html)*
-</div>
 
 ## Security
 One metric our previous analytic framework does not measure is security. Thankfully Mozilla cared to create the [Mozilla Observatory](https://observatory.mozilla.org/) as an analytic security framework for websites. We find that Jekyll fails to take steps to improve security for common hosting solutions. Generally speaking, web security guarantees are provided by the web server, and Jekyll leaves up to you, which is impossible if you don't control the hosting servers. When measuring various Jekyll blogs, the average score has always been graded **F**. This oversight is an opportunity for improvement using Zola, which we will dig into.
 
 <div align="center">
-<img alt="Raph's Observatory metrics" src="raph_security.png" style="max-height: 300px;"/>
+{{ img(path="./raph_security.png", alt="Raph's Observatory metrics") }}
 </div>
 
 # Abridge
@@ -76,10 +76,10 @@ Abridge is, in my opinion, ready for wide adoption. Specifically, this theme is 
 <tr>
 <td>
 <div align="center">
-    <img alt="Abridge Lighthouse score" src="abridge_seo.png" style="max-height: 300px;"/>
+{{ img(path="./abridge_seo.png", alt="Abridge's Lighthouse score") }}
+</div>
 
 *[Click here for the full report](jieiku.github.io_2022-05-17_18-56-57.html)*
-</div>
 </td>
 <td>
 
@@ -105,7 +105,7 @@ Security was also improved for common free hosting. One of the complex issues wi
 <tr>
 <td>
 <div align="center">
-    <img alt="My observatory score" src="my_security.png" style="max-height: 300px;"/>
+  {{ img(path="./my_security.png", alt="My Observatory score") }}
 </div>
 </td>
 <td>
@@ -163,7 +163,7 @@ Once your deployment is working, I have some recommendations for creating conten
 # Exercise
 Align with a trend I'm patternizing, I include an exercise with an opportunity to join a technical community of likeminded individuals, if you want to join.
 
-The exercise is to start a Zola site using the Abridge theme, deployed with CI such as GitHub Actions. If you already have a blog or static site, convert your current deployment. Write your site's URL in a comment on [the merge request for this blog](https://github.com/simbleau/simbleau.github.io/pull/9), and for the first three individuals, I will present an invitation only you can accept. No hints this time, sorry!
+The exercise is to start a Zola site using the Abridge theme, deployed with CI such as GitHub Actions. If you already have a blog or static site, convert your current deployment. Write your site's URL in a comment on [the merge request for this blog](https://github.com/simbleau/simbleau.github.io/pull/9), and for the first three individuals, I will present an invitation only you can accept. You may find a useful guide to get started [here](https://github.com/Jieiku/abridge#quick-start).
 
 Farvel! Until next time.
 

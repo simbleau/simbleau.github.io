@@ -29,12 +29,9 @@ How does age measure up to this definition? Well, age uses a native backend of X
 Age emits terse 63 character public keys with support for multiple pluggable recipients and passphrases. This means multiple keys can decrypt a file. Age also provides excellent interoperability with existing standards, such as supporting SSH public keys as recipient types. It does this by injecting a header on the encrypted file with recipient keys and types[^age_format]. These tags are, however, embedded in the file. Thankfully, the native X25519 backend is able to obfuscate this information. However with SSH keys, it is possible to track files encrypted to a specific public key. I advise using SSH keys only as a convenience.
 
 # Age in Rust
-[![crates.io](https://img.shields.io/crates/v/age?style=flat-square)](https://crates.io/crates/age)
-[![docs.rs](https://img.shields.io/docsrs/age/latest?style=flat-square)](https://docs.rs/age/latest/age)
-
 Age was originally a Go library, but it was quickly ported to Rust as an interoperable equivalent, called *rage*. In other words, the binary executable rage can replace the original executable simply with `cargo install rage` and `alias age=rage` ([other platforms](https://github.com/str4d/rage#installation)).
 
-Developers in Rust wanting to work with age are provided the [*age*](https://crates.io/crates/age) library crate, which nice features like async support. Those interested in WASM support can look at the WASM example, [*wage*](https://github.com/str4d/wage).
+Developers in Rust wanting to work with age are provided the [*age*](https://crates.io/crates/age) library crate, which nice features, [documentation](https://docs.rs/age/latest/age) like async support. Those interested in WASM support can look at the WASM example, [*wage*](https://github.com/str4d/wage).
 
 The examples on docs are pretty easy to follow.
 
@@ -103,7 +100,7 @@ key2:
 
 This is a gain for open-source initiatives, because config files and private configurations can be shared publicly with safety and better direction. For example, [my home kubernetes configuration](https://github.com/simbleau/home-ops) matter is completely public and open source, with [secrets encrypted with SOPS](https://github.com/simbleau/home-ops/tree/main/vpn). I also recommend [pre-commit](https://pre-commit.com/) with a hook to [forbid secrets](https://github.com/zricethezav/gitleaks) accidentally being committed.
 
-## SOPS + Visual Studio (VS) Code
+## SOPS + VSCode
 SOPS has the benefit of integrating your favorite `$EDITOR` (default is `vim`), but many, including Rustaceans, use *VSCode*. Thankfully, there's a plugin to support realtime editing of SOPS encrypted files: [signageos.signageos-vscode-sops](https://marketplace.visualstudio.com/items?itemName=signageos.signageos-vscode-sops). You'll need to create a `.sops.yaml` file in your repository base which declares the regex pattern of your SOPS files ([example](https://github.com/simbleau/home-ops/blob/main/.sops.yml)).
 
 A toy example to match files with `.sops.` anywhere in the filename, e.g. `example.sops.yml`
