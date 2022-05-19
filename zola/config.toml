@@ -34,7 +34,7 @@ author_show = false # displays the author name below the title after the date, t
 readtime = true # displays the read time on line with date, tags, categories
 readtime_string = "min read" # read time indication eg "min": - 1 min  "min read": - 1 min read
 recent = true
-recent_items = 3
+recent_items = 6
 footer_credit = true
 footer_credit_override = 'Built with <i class="fa-solid fa-mug-hot"></i> and a <i class="fa-solid fa-keyboard"></i> using <i class="fa-brands fa-rust"></i><br><small><a href="https://github.com/simbleau/simbleau.github.io"><i class="fa-solid fa-pen-to-square"></i> Edit on GitHub</a></small>'
 
