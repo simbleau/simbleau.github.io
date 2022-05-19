@@ -10,30 +10,42 @@ build_search_index = true
 minify_html = true
 generate_feed = true
 feed_filename = "atom.xml"
-#ignored_content = ["*.{graphml,xlsx}", "temp.*"]
-#hard_link_static = false # set to true to hard link instead of copying, useful for very large files.
 taxonomies = [
     {name = "categories", feed = true},
     {name = "tags", feed = true},
 ]
 
+# Footer social links; full options listed in macros/social.html
+[extra.social]
+feed = true
+mail = "spencer@imbleau.com"
+twitter = "spencerimbleau"
+linkedin = "simbleau"
+github = "simbleau"
+github_sponsor = "simbleau"
+buymeacoffee = "simbleau"
+researchgate = "Spencer-Imbleau"
+
 [extra]
 language_code = "en-US"
+title_separator = "|"  # Separator between title and title_addition, set as |, -, _, etc
 author = "Spencer C. Imbleau"
 author_show = false # displays the author name below the title after the date, tags, categories
 readtime = true # displays the read time on line with date, tags, categories
 readtime_string = "min read" # read time indication eg "min": - 1 min  "min read": - 1 min read
 recent = true
-recent_items = 6
+recent_items = 3
 footer_credit = true
 footer_credit_override = 'Built with <i class="fa-solid fa-mug-hot"></i> and a <i class="fa-solid fa-keyboard"></i> using <i class="fa-brands fa-rust"></i><br><small><a href="https://github.com/simbleau/simbleau.github.io"><i class="fa-solid fa-pen-to-square"></i> Edit on GitHub</a></small>'
-katex_enable = false # used to to render mathematical notations, requires js
-katex_auto_render = false
 
 textlogo = 'Spencer C. Imbleau'
+title_addition = "Blog" # a default value for title addition
 sitedesc = false # enables or disables the display of the site description below the logo.
 copyright_start_year = 2021  # optional
 #copyright_end_year = 2020  # optional, recommend leaving unset, zola build will set this to current year by default
+
+headhr = true # show or hide horizontal rule below header
+foothr = true # show or hide horizontal rule above footer
 menu = [
     {url = "/", name = '<i class="fa-solid fa-house"></i> Home', slash = true},
     {url = "/donate/", name = '<i class="fa-solid fa-circle-dollar-to-slot"></i> Donate', slash = true},
@@ -48,11 +60,6 @@ menu_footer = [
     {url = "/sitemap.xml", name = '<i class="fa-solid fa-map-location-dot"></i> Sitemap', slash = false},
 ]
 
-fonts_load = false # used to import fonts
-fonts = [
-    {url = "fonts.css"},
-]
-
 # SEO
 seo = true  # enable or disable seo-related meta tags: opengraph, facebook, twitter
 twitter = "spencerimbleau"
@@ -65,8 +72,8 @@ banner = "banner.png" # Used for embedding cards
 favicon_theme_color = "#fafafa"
 favicon_ms_color = "#fafafa"
 favicon_webmanifest = "site.webmanifest" # Used for android-chrome-512x512.png and android-chrome-192x192.png
-#favicon_mask = "safari-pinned-tab.svg" # safari-pinned-tab.svg
-#favicon_mask_color = "#ff9900"
+# TODO favicon_mask = "safari-pinned-tab.svg" # safari-pinned-tab.svg
+# TODO favicon_mask_color = "#ff9900"
 favicon180 = "apple-touch-icon.png" # apple-touch-icon.png
 favicon32 = "favicon-32x32.png" # favicon-32x32.png
 favicon16 = "favicon-16x16.png" # favicon-16x16.png
@@ -78,21 +85,25 @@ js_search_index ="search_index.en.js"
 js_search = "search.min.js"
 rss_atom_feed = "atom.xml"
 
+# For externally loaded Fonts, make sure to include the FULL url including the http/https prefix
+#fonts = [ {url = "https://fonts.googleapis.com/css?family=Montserrat:400,700,italic|Fira+Code:400,italic"} ]
+
+# Local fonts are defined in the css, defining them here only adds the preload tag to the head.
+# preload will eliminate Content Layout Shift, but will hurt with page load time.
+#fonts = [
+#    {url = "font/FiraCode.woff2"},
+#    {url = "font/Jost.woff2"},
+#    {url = "font/Jost-italic.woff2"},
+#    {url = "font/Jost-Bold.woff2"},
+#]
+
 # Security Headers should preferably be set by your webserver (Nginx, Apache) https://observatory.mozilla.org
 # Set this to true if you are unable to load your security headers with your webserver, this will load a couple of them as meta tags.
 # There are many other security related headers most of which can only be set by the webserver method.
 security_header_referrer = "strict-origin-when-cross-origin"
 
-# Footer social links; full options listed in macros/social.html
-[extra.social]
-feed = true
-mail = "spencer@imbleau.com"
-twitter = "spencerimbleau"
-linkedin = "simbleau"
-github = "simbleau"
-github_sponsor = "simbleau"
-buymeacoffee = "simbleau"
-researchgate = "Spencer-Imbleau"
+katex_enable = false # used to to render mathematical notations, requires js
+katex_auto_render = false
 
 [markdown]
 highlight_code = true
