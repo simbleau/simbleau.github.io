@@ -102,8 +102,8 @@ rss_atom_feed = "atom.xml"
 # There are many other security related headers most of which can only be set by the webserver method.
 security_header_referrer = "strict-origin-when-cross-origin"
 
-katex_enable = false # used to to render mathematical notations, requires js
-katex_auto_render = false
+math = false # used to to render mathematical notations, requires js
+math_auto_render = false
 
 [markdown]
 highlight_code = true
