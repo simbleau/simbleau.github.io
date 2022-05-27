@@ -9,7 +9,7 @@ compile_sass = true
 build_search_index = true
 minify_html = true
 generate_feed = true
-feed_filename = "atom.xml"
+feed_filename = "rss.xml"
 taxonomies = [
     {name = "categories", feed = true},
     {name = "tags", feed = true},
@@ -83,7 +83,6 @@ fontawesome = "https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/
 stylesheet = "abridge-bluelight.css" # location and file to use for stylesheet
 js_search_index ="search_index.en.js"
 js_search = "search.min.js"
-rss_atom_feed = "atom.xml"
 
 # For externally loaded Fonts, make sure to include the FULL url including the http/https prefix
 #fonts = [ {url = "https://fonts.googleapis.com/css?family=Montserrat:400,700,italic|Fira+Code:400,italic"} ]
