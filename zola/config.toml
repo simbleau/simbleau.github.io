@@ -99,8 +99,8 @@ js_theme = "theme.min.js" # Separate Always, comment out if using -auto/-light/-
 js_themeButton = "theme_button.js"# Bundleable
 js_bundle = "abridge-switcher.min.js"# Bundle JS File, comment out to disable (includes switcher)
 #stylesheets = [ "abridge-switcher.css" ] # Orange Automatic Dark/Light Theme based on browser/system preference with switcher
-#stylesheets = [ "abridge-blue-switcher.css" ] # Blue Automatic Night/Light Theme based on browser/system preference with switcher
-stylesheets = [ "abridge-blueshade-switcher.css" ] # BlueShade Automatic Night/Light Theme based on browser/system preference with switcher
+stylesheets = [ "abridge-blue-switcher.css" ] # Blue Automatic Night/Light Theme based on browser/system preference with switcher
+#stylesheets = [ "abridge-blueshade-switcher.css" ] # BlueShade Automatic Night/Light Theme based on browser/system preference with switcher
 
 ########## No Switcher ##########
 #js_bundle = "search.min.js"# Bundle JS File, comment out to disable (search only: no switcher/prestyle)
