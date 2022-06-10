@@ -1,0 +1,3 @@
+[submodule "zola/themes/abridge"]
+	path = zola/themes/abridge
+	url = https://github.com/jieiku/abridge.git
