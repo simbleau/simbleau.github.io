@@ -18,7 +18,7 @@ taxonomies = [
 
 theme = "abridge"
 [markdown]
-extra_syntaxes_and_themes = ["highlight_themes", "themes/abridge/highlight_themes"] # Abridge's config.toml
+extra_syntaxes_and_themes = ["themes/abridge/highlight_themes"] # Abridge's config.toml
 # In YOUR SITE'S config.toml set to: ["highlight_themes", "themes/abridge/highlight_themes"]
 highlight_code = true
 #highlight_theme = "ayu-light-abridge"
@@ -43,7 +43,7 @@ language_code = "en-US"
 title_separator = "|"  # Separator between title and title_addition, set as |, -, _, etc
 # To disable title_addition but keep built in page additions eg, Posts page: "Posts | Abridge" set title_addition to an empty string
 # To always set the page title exactly eg "Abridge" then comment out the below line (not recommend, bad for SEO)
-title_addition = "Fast & Lightweight Zola Theme" # a default value for title addition
+title_addition = "Blog" # a default value for title addition
 
 author = "Spencer C. Imbleau" # Put Your Name here
 author_show = false # displays the author name on line with date, tags, categories
