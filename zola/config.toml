@@ -1,4 +1,4 @@
-base_url = "https://blog.imbleau.com" # do NOT include a trailing slash on the base URL for web urls
+base_url = "https://spencer.imbleau.com/blog" # do NOT include a trailing slash on the base URL for web urls
 #base_url = "/home/jieiku/.dev/abridge/public/" # used for locally usable build directly from disk, also set below extra.uglyurls = true
 title = "Spencer C. Imbleau"
 description = "Insights on modern technology."
