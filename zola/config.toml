@@ -45,12 +45,11 @@ title_separator = "|"  # Separator between title and title_addition, set as |, -
 # To always set the page title exactly eg "Abridge" then comment out the below line (not recommend, bad for SEO)
 title_addition = "Blog" # a default value for title addition
 
-author = "Spencer C. Imbleau" # Put Your Name here
-author_show = false # displays the author name on line with date, tags, categories
-readtime = true # displays the read time on line with date, tags, categories
-readtime_string = "min read" # read time indication eg "min": - 1 min  "min read": - 1 min read
 recent = true # TOC / index
 recent_items = 9
+meta_index = { position="bottom", size="s90", author=false, readtime=true, readstring="min read", date=true, categories_tags=true, divider=" " }
+meta_post = { position="top", size="s95", author=false, readtime=true, readstring="min read", date=true, categories_tags=true, divider=" " }
+
 footer_credit = true
 footer_credit_override = 'Built with <i class="fa-solid fa-mug-hot"></i> and a <i class="fa-solid fa-keyboard"></i> using <i class="fa-brands fa-rust"></i><br><small><a href="https://github.com/simbleau/simbleau.github.io"><i class="fa-solid fa-pen-to-square"></i> Edit on GitHub</a></small>'
 
@@ -139,6 +138,10 @@ favicon16 = "favicon-16x16.png" # favicon-16x16.png
 
 # Uncomment below line to load fontawesome, eg: <i class="fa-solid fa-heart"></i>
 fontawesome = "https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"
+icon_read = "fa-solid fa-glasses" # displayed in metadata on index and below title on page.
+icon_date = "fa-solid fa-calendar" # displayed in metadata on index and below title on page.
+icon_info = "fa-solid fa-circle-info" # displayed in metadata on index and below title on page for categories/tags
+icon_author = "fa-solid fa-pen-fancy" # displayed in metadata on index and below title on page.
 
 # For externally loaded Fonts, make sure to include the FULL url including the http/https prefix
 #fonts = [ {url = "https://fonts.googleapis.com/css?family=Montserrat:400,700,italic|Fira+Code:400,italic"} ]
