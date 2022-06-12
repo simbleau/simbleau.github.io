@@ -47,8 +47,8 @@ title_addition = "Blog" # a default value for title addition
 
 recent = true # TOC / index
 recent_items = 9
-meta_index = { position="bottom", size="s90", author=false, readtime=true, readstring="min read", date=true, categories_tags=true, divider=" " }
-meta_post = { position="top", size="s95", author=false, readtime=true, readstring="min read", date=true, categories_tags=true, divider=" " }
+meta_index = { position="bottom", author=false, readtime=true, readstring="min read", date=true, categories_tags=true, divider=" " }
+meta_post = { position="top", author=false, readtime=true, readstring="min read", date=true, categories_tags=true, divider=" " }
 
 footer_credit = true
 footer_credit_override = 'Built with <i class="fa-solid fa-mug-hot"></i> and a <i class="fa-solid fa-keyboard"></i> using <i class="fa-brands fa-rust"></i><br><small><a href="https://github.com/simbleau/simbleau.github.io"><i class="fa-solid fa-pen-to-square"></i> Edit on GitHub</a></small>'
