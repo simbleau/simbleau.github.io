@@ -1,9 +1,17 @@
+<div align="center">
+
+<img src="zola/static/logo.svg" width="144px" height="144px"/>
+
 # Spencer C. Imbleau's Blog
 [![build](https://img.shields.io/github/workflow/status/simbleau/simbleau.github.io/gh-pages?style=for-the-badge&logo=github)](https://github.com/simbleau/simbleau.github.io/actions/workflows/gh-pages.yml)
 [![sponsor me](https://img.shields.io/badge/sponsor-30363D?style=for-the-badge&logo=GitHub-Sponsors&logoColor=#white)](https://github.com/sponsors/simbleau)
 [![buy me a coffee](https://img.shields.io/badge/Buy_Me_A_Coffee-FFDD00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/simbleau)
 
 <h3>To view the blog, click <a href="https://simbleau.github.io/blog">here</a>.</h3>
+
+</div>
+
+---
 
 # Contributing
 If there's something you think could be improved, chances are someone else agrees. The [`content/`](zola/content/) directory contains blog post content. [Pull requests](https://github.com/simbleau/simbleau.github.io/pulls) are welcome, or you can file an [issue](https://github.com/simbleau/simbleau.github.io/issues) if something is hard to understand. Issues are also used to track ideas. The [Contributer Covenant](https://www.contributor-covenant.org/version/2/0/code_of_conduct/) applies.
