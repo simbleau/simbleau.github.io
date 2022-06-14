@@ -1,5 +1,5 @@
 +++
-title = "CPU and GPU profiling with Rust and NVIDIA"
+title = "NVIDIA GPU profiling with Rust"
 date = 2022-06-12T00:00:00+00:00
 description = "The NVIDIA Tools Exension SDK (NVTX) has a lot to offer for GPU and CPU profiling. This blog shows how to leverage these tools with Rust, and how we can make sense of the results."
 
@@ -61,7 +61,7 @@ Two named markers visible through the events view on NSight Systems.
 ## Thread ranges
 Thread ranges are similar to markers except they annotate a span of time, rather than an instant of time. For example, a thread range can track the total time of an algorithm or process. These NVTX tracers are visible through the events view and the timeline view on NSight Systems.
 
-Ranges are pushed with the `range_push!` macro, which is behaviorally equivalent to the `println!` macro. Ranges are popped with the `range_pop!` macro. Thread ranges are also safe to push and pop over thread boundaries, hence 'thread' in the name.
+Ranges are pushed with the `range_push!` macro, which is behaviorally equivalent to the `println!` macro. Ranges are popped with the `range_pop!` macro. Thread ranges are also safe to push and pop over thread boundaries, hence *thread* in the name.
 
 ```rs
 use std::thread::sleep;
@@ -118,9 +118,11 @@ fn main() {
 To demonstrate the value of NSight Systems, NVTX, and Rust, I will present a typical case: measuring the benefits of GPU architecture. What can using a specific GPU feature provide? For an example, I'll show you a uniquely difficult problem and how we can measure the impact of GPU storage buffers with SVG rendering.
 
 ## Example Problem
-SVG files are formatted in a unique way: implicltly. Varyings must be provided, such as scale, in order to calculate the image. You may imagine an image as a composition of dimensionless shapes and math equations. A renderer must provide the camera zoom and offset to calculate what the image would look like.
+SVG files are formatted in a unique way: implicltly. Varyings must be provided, such as scale, in order to calculate and render the image. You may imagine an SVG file as a composition of dimensionless shapes and math equations. An arbitrary viewbox and scale are used to calculate the dimensions of the shapes and hence, what the image would look like.
 
-This requires a certain amount of work to be done, in order to render the image. For static SVG images, we could store that 'work' into a GPU storage buffer, and read it to inexpensively redraw future frames. So that is exactly what I am going to measure: How useful are GPU storage buffers in optimizing static SVG rendering?
+This requires a significant amount of work to be done before filling the first pixel. For static SVG images, we could cache that 'work' in a GPU storage buffer, and read it to inexpensively redraw future frames.
+
+Question: **How useful are GPU storage buffers in optimizing static SVG rendering?**
 
 ## Sample images
 The following SVG images will be used for benchmarking, chosen as an organic range with varying complexity.
@@ -130,14 +132,19 @@ The following SVG images will be used for benchmarking, chosen as an organic ran
 </div>
 
 ## Results
-As promised, [I wrote a naive GPU-based SVG renderer](https://github.com/kurbos/svg-tessellation-renderer) I am calling "*Render-Kit*". My renderer operates in three steps. Firstly, it tessellates the SVG primitives (curves, lines, paths) into discrete triangles with a library called [*Lyon*](https://github.com/nical/lyon). Ater, I store the the geometry into GPU storage buffers. **These first two steps are not graphed, we assume they take no time**. Once these pre-computation steps are complete, I benchmark the first 50 frames of the [sample images](#sample-images), using the pre-computed buffers to inexpensively redraw frames. The results are plotted below.
+[I wrote a naive GPU-based SVG renderer](https://github.com/kurbos/svg-tessellation-renderer) I am calling "*Render-Kit*". My renderer operates in three steps. Firstly, it tessellates the SVG primitives (curves, lines, paths) into discrete triangles with a library called [*Lyon*](https://github.com/nical/lyon). Then, I store this geometry (the work) into GPU storage buffers. **These first two steps are not graphed, we assume they take no time**. Once these pre-computation steps are complete, I benchmark the first 50 frames of the [sample images](#sample-images), using the pre-computed buffers to inexpensively redraw frames. The results are plotted below.
 
 <div align="center">
 {{ img(src="all_renderkit.svg" alt="My Results" w=576 h=432) }}
 </div>
 
-## Results
-Did you notice how the first frame is much longer 
+As you should notice, the first frame is significantly longer than the future frames. That's great news! Buffers seem to help out a lot. But why is the first frame so slow? With GPU metric sampling and use NVTX annotations to annotate the behavior, we can visualize the cause. I've annotated a range around the first frame as "*Strange Behavior*".
+
+<div align="center">
+{{ img(src="NVTX_Trace.png" alt="My Results" w=2243 h=965) }}
+</div>
+
+As it turns out, the amount of geometry being uploaded to the GPU causes a latency. For the first frame we submit a bulk of triangles to the storage buffer and this latency is the cause of slowdown on the first frame. As you can see in the screenshot, the warps are not occupied fully until the second frame, after the "*Strange behavior*".
 
 # Features in progress
 The entire NVTX API can be used to measure CPU code blocks, track lifetime of CPU resources (e.g., malloc), log critical events[^nvtx_def], and more. While I have ported a fraction of the SDK, there are some features outstanding. Primarily, I'd love to port [filtering tracers by domains](https://nvidia.github.io/NVTX/doxygen/index.html#DOMAINS) and [resource naming](https://nvidia.github.io/NVTX/doxygen/index.html#RESOURCE_NAMING). Feel free to contribute or check out the [issue board](https://github.com/simbleau/nvtx/issues).
