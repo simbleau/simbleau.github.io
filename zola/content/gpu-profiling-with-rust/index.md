@@ -1,6 +1,6 @@
 +++
 title = "NVIDIA GPU profiling with Rust"
-date = 2022-06-12T00:00:00+00:00
+date = 2022-06-19T00:00:00+00:00
 description = "The NVIDIA Tools Exension SDK (NVTX) has a lot to offer for GPU and CPU profiling. This blog shows how to leverage these tools with Rust, and how we can make sense of the results."
 
 [taxonomies]
