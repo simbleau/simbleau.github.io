@@ -9,9 +9,9 @@ Education should be completely free, and no amount of money should increase one'
 
 <div align='center'>
     <span style='padding: 10px;'>
-        <a href="https://www.buymeacoffee.com/simbleau/" target="_blank"><img src="/buymeacoffee_button.png" width="200"/></a>
+        <a href="https://www.buymeacoffee.com/simbleau/" target="_blank"><img src="/blog/buymeacoffee_button.png" width="200"/></a>
     </span>
     <span style='padding: 10px;'>
-        <a href="https://github.com/sponsors/simbleau/" target="_blank"><img src="/githubsponsor_button.png" width="200"/></a>
+        <a href="https://github.com/sponsors/simbleau/" target="_blank"><img src="/blog/githubsponsor_button.png" width="200"/></a>
     </span>
 </div>
