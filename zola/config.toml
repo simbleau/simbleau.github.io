@@ -21,7 +21,7 @@ theme = "abridge"
 extra_syntaxes_and_themes = ["themes/abridge/highlight_themes"] # Abridge's config.toml
 # In YOUR SITE'S config.toml set to: ["highlight_themes", "themes/abridge/highlight_themes"]
 highlight_code = true
-#highlight_theme = "ayu-light-abridge"
+#highlight_theme = "abridge-dark"
 highlight_theme = "css"
 
 # abridge-dark ayu-dark-abridge ayu_mirage-dark-abridge charcoal-dark-abridge dracula-dark-abridge material-dark-abridge
@@ -44,14 +44,19 @@ title_separator = "|"  # Separator between title and title_addition, set as |, -
 # To disable title_addition but keep built in page additions eg, Posts page: "Posts | Abridge" set title_addition to an empty string
 # To always set the page title exactly eg "Abridge" then comment out the below line (not recommend, bad for SEO)
 title_addition = "Blog" # a default value for title addition
-
 recent = true # TOC / index
 recent_items = 9
-meta_index = { position="bottom", author=false, readtime=true, readstring="min read", date=true, categories_tags=true, divider=" " }
-meta_post = { position="top", author=false, readtime=true, readstring="min read", date=true, categories_tags=true, divider=" " }
+author = "Spencer C. Imbleau" # Put Your Name here
 
+title_size_index = "s95" # size: s95, s90, s85, s80, s75, s70, false(full size)
+meta_index = { position="bottom", size="s95", author=false, readtime=false, readstring="min", date=true, categories_tags=true, divider=" " }
+meta_post = { position="top", size="s95", author=false, readtime=false, readstring="min read", date=true, categories_tags=true, divider=" " }
+## position: top, bottom, both, false(hidden) ## size: s95, s90, s85, s80, s75, s70, false(full size)
+## divider:    "&middot;"    "&bull;"    " "
+
+footer_size = false # size: s95, s90, s85, s80, s75, s70, false(full size)
 footer_credit = true
-footer_credit_override = 'Built with <i class="fa-solid fa-mug-hot"></i> and a <i class="fa-solid fa-keyboard"></i> using <i class="fa-brands fa-rust"></i><br><small><a href="https://github.com/simbleau/simbleau.github.io"><i class="fa-solid fa-pen-to-square"></i> Edit on GitHub</a></small>'
+footer_credit_override = 'Built with <i class="svgs fa-solid fa-mug-hot"></i> and a <i class="svgs fa-solid fa-keyboard"></i> using <i class="svgs fa-brands fa-rust"></i><br><small><a href="https://github.com/simbleau/simbleau.github.io"><i class="svgs fa-solid fa-pen-to-square"></i> Edit on GitHub</a></small>'
 
 #uncomment one of the two lines, or neither, depending on which type of logo you want to use:
 #logo = { file="logo.svg", width="32", height="32", alt="Abridge", text="bridge" }
@@ -66,15 +71,15 @@ headhr = true # show or hide horizontal rule below header
 foothr = true # show or hide horizontal rule above footer
 
 menu = [
-    {url = "/donate/", name = '<i class="fa-solid fa-circle-dollar-to-slot"></i> Donate', slash = true},
-    {url = "/posts/", name = '<i class="fa-solid fa-book"></i> Posts', slash = true},
-    {url = "/categories/", name = '<i class="fa-solid fa-layer-group"></i> Categories', slash = true},
-    {url = "/tags/", name = '<i class="fa-solid fa-tags"></i> Tags', slash = true},
+    {url = "/donate/", name = '<i class="svgs fa-solid fa-circle-dollar-to-slot"></i> Donate', slash = true},
+    {url = "/posts/", name = '<i class="svgs fa-solid fa-book"></i> Posts', slash = true},
+    {url = "/categories/", name = '<i class="svgs fa-solid fa-layer-group"></i> Categories', slash = true},
+    {url = "/tags/", name = '<i class="svgs fa-solid fa-tags"></i> Tags', slash = true},
 ]
 menu_footer = [
-    {url = "/about/", name = '<i class="fa-solid fa-circle-info"></i> About', slash = true},
-    {url = "/privacy/", name = '<i class="fa-solid fa-user-secret"></i> Privacy', slash = true},
-    {url = "/sitemap.xml", name = '<i class="fa-solid fa-map-location-dot"></i> Sitemap', slash = false},
+    {url = "/about/", name = '<i class="svgs fa-solid fa-circle-info"></i> About', slash = true},
+    {url = "/privacy/", name = '<i class="svgs fa-solid fa-user-secret"></i> Privacy', slash = true},
+    {url = "/sitemap.xml", name = '<i class="svgs fa-solid fa-map-location-dot"></i> Sitemap', slash = false},
 ]
 
 # Security Headers should preferably be set by your webserver (Nginx, Apache) https://observatory.mozilla.org  https://csp-evaluator.withgoogle.com/
@@ -94,7 +99,6 @@ js_search_index = "search_index.en.js" # Separate Always, generated each build
 js_prestyle = "prestyle.js"# Bundleable - used to preload: FontAwesome, Katex, external Google Fonts
 js_search = [ "elasticlunr.min.js", "search.js" ]# Bundleable
 js_codecopy = "codecopy.js"# Bundleable
-
 
 ########## Switcher ########## (comment this block out if NOT using switcher):
 js_theme = "theme.min.js" # Separate Always, comment out if using -auto/-light/-dark stylesheet. (required for switcher)
@@ -123,8 +127,8 @@ stylesheets = [ "abridge-blue-switcher.css" ] # Blue Automatic Night/Light Theme
 # You can include whatever js you want in your bundle. just generate your file like below and place in your sites root static directory:
 #               cd mysite/themes/abridge/static
 # search:       uglifyjs elasticlunr.min.js search.js -o search.min.js -c -m
-# noswitcher:   uglifyjs prestyle.js elasticlunr.min.js search.js -o abridge.min.js -c -m
-# ALL:          uglifyjs prestyle.js theme_button.js elasticlunr.min.js search.js -o abridge-switcher.min.js -c -m
+# noswitcher:   uglifyjs prestyle.js codecopy.js elasticlunr.min.js search.js -o abridge.min.js -c -m
+# ALL:          uglifyjs prestyle.js codecopy.js theme_button.js elasticlunr.min.js search.js -o abridge-switcher.min.js -c -m
 # theme:        uglifyjs theme.js -o theme.min.js -c -m
 # katex_bundle: uglifyjs katex.min.js mathtex-script-type.min.js auto-render.min.js katexoptions.js -o katexbundle.min.js -c -m
 
@@ -141,10 +145,19 @@ favicon16 = "favicon-16x16.png" # favicon-16x16.png
 
 # Uncomment below line to load fontawesome, eg: <i class="fa-solid fa-heart"></i>
 fontawesome = "https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"
-icon_read = "fa-solid fa-glasses" # displayed in metadata on index and below title on page.
-icon_date = "fa-solid fa-calendar" # displayed in metadata on index and below title on page.
-icon_info = "fa-solid fa-circle-info" # displayed in metadata on index and below title on page for categories/tags
-icon_author = "fa-solid fa-pen-fancy" # displayed in metadata on index and below title on page.
+
+# Icons, by default fontawesome classes, but you can specify any icon you want here.
+icon_read = "svgs fa-solid fa-glasses" # displayed in metadata on index and below title on page.
+icon_date = "svgs fa-solid fa-calendar" # displayed in metadata on index and below title on page.
+icon_info = "svgs fa-solid fa-circle-info" # displayed in metadata on index and below title on page for categories/tags
+icon_author = "svgs fa-solid fa-pen-fancy" # displayed in metadata on index and below title on page.
+icon_search = "svgs fa-solid fa-magnifying-glass" # Search button in search box.
+icon_contrast = "svgs fa-a fa-solid fa-circle-half-stroke" # Theme Switcher button in top menu.
+icon_top = "svgs fa-solid fa-circle-chevron-up" # Back to Top Button.
+#icon_first = "svgs fa-solid fa-angles-left" # Pagination First Page.
+#icon_prev = "svgs fa-solid fa-angle-left" # Pagination Previous Page.
+#icon_next = "svgs fa-solid fa-angle-right" # Pagination Next Page.
+#icon_last = "svgs fa-solid fa-angles-right" # Pagination Last Page.
 
 # For externally loaded Fonts, make sure to include the FULL url including the http/https prefix
 #fonts = [ {url = "https://fonts.googleapis.com/css?family=Montserrat:400,700,italic|Fira+Code:400,italic"} ]
@@ -172,7 +185,6 @@ mathtex_js = "mathtex-script-type.min.js" # use local js, so that we dont have t
 katex_autorender_js = "auto-render.min.js"
 katex_options = "katexoptions.js"
 katex_bundle = "katexbundle.min.js"
-
 
 
 ##########################
