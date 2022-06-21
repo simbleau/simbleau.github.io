@@ -48,9 +48,9 @@ recent = true # TOC / index
 recent_items = 9
 author = "Spencer C. Imbleau" # Put Your Name here
 
-title_size_index = "s95" # size: s95, s90, s85, s80, s75, s70, false(full size)
-meta_index = { position="bottom", size="s95", author=false, readtime=false, readstring="min", date=true, categories_tags=true, divider=" " }
-meta_post = { position="top", size="s95", author=false, readtime=false, readstring="min read", date=true, categories_tags=true, divider=" " }
+title_size_index = "false" # size: s95, s90, s85, s80, s75, s70, false(full size)
+meta_index = { position="bottom", size="false", author=false, readtime=true, readstring="min read", date=true, categories_tags=true, divider=" " }
+meta_post = { position="top", size="false", author=false, readtime=true, readstring="min read", date=true, categories_tags=true, divider=" " }
 ## position: top, bottom, both, false(hidden) ## size: s95, s90, s85, s80, s75, s70, false(full size)
 ## divider:    "&middot;"    "&bull;"    " "
 
