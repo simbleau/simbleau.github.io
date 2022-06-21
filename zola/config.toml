@@ -45,7 +45,7 @@ title_separator = "|"  # Separator between title and title_addition, set as |, -
 # To always set the page title exactly eg "Abridge" then comment out the below line (not recommend, bad for SEO)
 title_addition = "Blog" # a default value for title addition
 recent = true # TOC / index
-recent_items = 9
+recent_items = 6
 author = "Spencer C. Imbleau" # Put Your Name here
 
 title_size_index = "false" # size: s95, s90, s85, s80, s75, s70, false(full size)
@@ -56,7 +56,7 @@ meta_post = { position="top", size="false", author=false, readtime=true, readstr
 
 footer_size = false # size: s95, s90, s85, s80, s75, s70, false(full size)
 footer_credit = true
-footer_credit_override = 'Built with <i class="svgs fa-solid fa-mug-hot"></i> and a <i class="svgs fa-solid fa-keyboard"></i> using <i class="svgs fa-brands fa-rust"></i><br><small><a href="https://github.com/simbleau/simbleau.github.io"><i class="svgs fa-solid fa-pen-to-square"></i> Edit on GitHub</a></small>'
+footer_credit_override = 'Built with <i class="svgs fa-solid fa-mug-hot"></i> and a <i class="svgs fa-solid fa-keyboard"></i> using <i class="svgs fa-brands fa-rust"></i><br><small><a href="https://github.com/simbleau/blog"><i class="svgs fa-solid fa-pen-to-square"></i> Edit on GitHub</a></small>'
 
 #uncomment one of the two lines, or neither, depending on which type of logo you want to use:
 #logo = { file="logo.svg", width="32", height="32", alt="Logo", text="Spencer C. Imbleau" }
