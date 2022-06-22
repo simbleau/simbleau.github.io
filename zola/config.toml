@@ -152,6 +152,7 @@ icon_date = "svgs fa-solid fa-calendar" # displayed in metadata on index and bel
 icon_info = "svgs fa-solid fa-circle-info" # displayed in metadata on index and below title on page for categories/tags
 icon_author = "svgs fa-solid fa-pen-fancy" # displayed in metadata on index and below title on page.
 icon_search = "svgs fa-solid fa-magnifying-glass" # Search button in search box.
+icon_adjust = "svgs fa-solid fa-circle-half-stroke" # Theme Switcher button in top menu.
 icon_contrast = "svgs fa-a fa-solid fa-circle-half-stroke" # Theme Switcher button in top menu.
 icon_top = "svgs fa-solid fa-circle-chevron-up" # Back to Top Button.
 icon_first = "svgs fa-solid fa-angles-left" # Pagination First Page.
