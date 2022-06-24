@@ -3,6 +3,7 @@
     src: url('fonts/blog-brands.woff2') format('woff2');
 }
 
+[class^="i-"]:before,
 [class*=" i-"]:before {
     font-family: "Blog-Brands";
     font-style: normal;
