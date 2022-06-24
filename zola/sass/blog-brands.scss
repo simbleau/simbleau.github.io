@@ -1,0 +1,23 @@
+@font-face {
+    font-family: 'Blog-Brands';
+    src: url('fonts/blog-brands.woff2') format('woff2');
+}
+
+[class*=" i-"]:before {
+    font-family: "Blog-Brands";
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal; // reset parent styles that can break glyph codes
+    text-transform: none; // reset parent styles that can break glyph codes
+    line-height: 1em; // fix buttons height
+    width: 1em; // fix buttons width
+    vertical-align: 1em; // fix buttons alignment
+    text-align: center;
+    display: inline-block;
+    //text-decoration: inherit;
+}
+
+// Rust Icon
+.i-rust:before {
+    content: '\f07a';
+}

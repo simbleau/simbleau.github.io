@@ -1,0 +1,119 @@
+@font-face {
+    font-family: 'Blog-Icons';
+    src: url('fonts/blog-icons.woff2') format('woff2');
+}
+
+[class^="i-"]:before,
+[class*=" i-"]:before {
+    font-family: "Blog-Icons";
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal; // reset parent styles that can break glyph codes
+    text-transform: none; // reset parent styles that can break glyph codes
+    line-height: 1em; // fix buttons height
+    width: 1em; // fix buttons width
+    vertical-align: 1em; // fix buttons alignment
+    text-align: center;
+    display: inline-block;
+    //text-decoration: inherit;
+}
+
+// Search Icon
+.i-search:before {
+    content: '\f002';
+}
+
+// Info Icon
+.i-info:before {
+    content: '\f05a';
+}
+
+// Posts Icon
+.i-posts:before {
+    content: '\f02d';
+}
+
+// Categories Icon
+.i-categories:before {
+    content: '\f5fd';
+}
+
+// Tags Icon
+.i-tags:before {
+    content: '\f02c';
+}
+
+// Privacy Icon
+.i-privacy:before {
+    content: '\f21b';
+}
+
+// Donate Icon
+.i-donate:before {
+    content: '\f4b9';
+}
+
+// Site Map Icon
+.i-sitemap:before {
+    content: '\f5a0';
+}
+
+// Angles Left Icon
+.i-angles-left:before {
+    content: '\f100';
+}
+
+// Angles Right Icon
+.i-angles-right:before {
+    content: '\f101';
+}
+
+// Angles Up Icon
+.i-angles-up:before {
+    content: '\f102';
+}
+
+// Angle Left Icon
+.i-angle-left:before {
+    content: '\f104';
+}
+
+// Angle Right Icon
+.i-angle-right:before {
+    content: '\f105';
+}
+
+// Calendar Icon
+.i-calendar:before {
+    content: '\f133';
+}
+
+// Sun Icon
+.i-sun:before {
+    content: '\f185';
+}
+
+// Moon Icon
+.i-moon:before {
+    content: '\f186';
+}
+
+// Glasses Icon
+.i-glasses:before {
+    content: '\f530';
+}
+
+// Edit Icon
+.i-edit:before {
+    content: '\f044';
+}
+
+// Coffee Icon
+.i-coffee:before {
+    content: '\f7b6';
+}
+
+// Keyboard Icon
+.i-keyboard:before {
+    content: '\f11c';
+}

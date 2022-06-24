@@ -56,7 +56,7 @@ meta_post = { position="top", size="false", author=false, readtime=true, readstr
 
 footer_size = false # size: s95, s90, s85, s80, s75, s70, false(full size)
 footer_credit = true
-footer_credit_override = 'Built with <i class="svgs fa-solid fa-mug-hot"></i> and a <i class="svgs fa-solid fa-keyboard"></i> using <i class="svgs fa-brands fa-rust"></i><br><small><a href="https://github.com/simbleau/blog"><i class="svgs fa-solid fa-pen-to-square"></i> Edit on GitHub</a></small>'
+footer_credit_override = 'Built with <i class="svgs i-coffee"></i> and a <i class="svgs i-keyboard"></i> using <i class="svgs i-rust"></i><br><small><a href="https://github.com/simbleau/blog"><i class="svgs i-edit"></i> Edit on GitHub</a></small>'
 
 #uncomment one of the two lines, or neither, depending on which type of logo you want to use:
 #logo = { file="logo.svg", width="32", height="32", alt="Logo", text="Spencer C. Imbleau" }
@@ -71,15 +71,15 @@ headhr = true # show or hide horizontal rule below header
 foothr = true # show or hide horizontal rule above footer
 
 menu = [
-    {url = "/donate/", name = '<i class="svgs fa-solid fa-circle-dollar-to-slot"></i> Donate', slash = true},
-    {url = "/posts/", name = '<i class="svgs fa-solid fa-book"></i> Posts', slash = true},
-    {url = "/categories/", name = '<i class="svgs fa-solid fa-layer-group"></i> Categories', slash = true},
-    {url = "/tags/", name = '<i class="svgs fa-solid fa-tags"></i> Tags', slash = true},
+    {url = "/donate/", name = '<i class="svgs i-donate"></i> Donate', slash = true},
+    {url = "/posts/", name = '<i class="svgs i-posts"></i> Posts', slash = true},
+    {url = "/categories/", name = '<i class="svgs i-categories"></i> Categories', slash = true},
+    {url = "/tags/", name = '<i class="svgs i-tags"></i> Tags', slash = true},
 ]
 menu_footer = [
-    {url = "/about/", name = '<i class="svgs fa-solid fa-circle-info"></i> About', slash = true},
-    {url = "/privacy/", name = '<i class="svgs fa-solid fa-user-secret"></i> Privacy', slash = true},
-    {url = "/sitemap.xml", name = '<i class="svgs fa-solid fa-map-location-dot"></i> Sitemap', slash = false},
+    {url = "/about/", name = '<i class="svgs i-info"></i> About', slash = true},
+    {url = "/privacy/", name = '<i class="svgs i-privacy"></i> Privacy', slash = true},
+    {url = "/sitemap.xml", name = '<i class="svgs i-sitemap"></i> Sitemap', slash = false},
 ]
 
 # Security Headers should preferably be set by your webserver (Nginx, Apache) https://observatory.mozilla.org  https://csp-evaluator.withgoogle.com/
@@ -105,7 +105,7 @@ js_theme = "theme.min.js" # Separate Always, comment out if using -auto/-light/-
 js_themeButton = "theme_button.js"# Bundleable
 js_bundle = "abridge-switcher.min.js"# Bundle JS File, comment out to disable (includes switcher)
 #stylesheets = [ "abridge-switcher.css" ] # Orange Automatic Dark/Light Theme based on browser/system preference with switcher
-stylesheets = [ "abridge-blue-switcher.css" ] # Blue Automatic Night/Light Theme based on browser/system preference with switcher
+stylesheets = [ "abridge-blue-switcher.css", "blog-icons.css" ] # Blue Automatic Night/Light Theme based on browser/system preference with switcher
 #stylesheets = [ "abridge-blueshade-switcher.css" ] # BlueShade Automatic Night/Light Theme based on browser/system preference with switcher
 
 ########## No Switcher ##########
@@ -144,21 +144,21 @@ favicon32 = "favicon-32x32.png" # favicon-32x32.png
 favicon16 = "favicon-16x16.png" # favicon-16x16.png
 
 # Uncomment below line to load fontawesome, eg: <i class="fa-solid fa-heart"></i>
-fontawesome = "https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"
+#fontawesome = "https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"
 
 # Icons, by default fontawesome classes, but you can specify any icon you want here.
-icon_read = "svgs fa-solid fa-glasses" # displayed in metadata on index and below title on page.
-icon_date = "svgs fa-solid fa-calendar" # displayed in metadata on index and below title on page.
-icon_info = "svgs fa-solid fa-circle-info" # displayed in metadata on index and below title on page for categories/tags
-icon_author = "svgs fa-solid fa-pen-fancy" # displayed in metadata on index and below title on page.
-icon_search = "svgs fa-solid fa-magnifying-glass" # Search button in search box.
-icon_adjust = "svgs fa-solid fa-circle-half-stroke" # Theme Switcher button in top menu.
-icon_contrast = "svgs fa-a fa-solid fa-circle-half-stroke" # Theme Switcher button in top menu.
-icon_top = "svgs fa-solid fa-circle-chevron-up" # Back to Top Button.
-icon_first = "svgs fa-solid fa-angles-left" # Pagination First Page.
-icon_prev = "svgs fa-solid fa-angle-left" # Pagination Previous Page.
-icon_next = "svgs fa-solid fa-angle-right" # Pagination Next Page.
-icon_last = "svgs fa-solid fa-angles-right" # Pagination Last Page.
+icon_read = "svgs i-glasses" # displayed in metadata on index and below title on page.
+icon_date = "svgs i-calendar" # displayed in metadata on index and below title on page.
+icon_info = "svgs i-info" # displayed in metadata on index and below title on page for categories/tags
+#icon_author = "svgs fa-solid fa-pen-fancy" # displayed in metadata on index and below title on page.
+icon_search = "svgs i-search" # Search button in search box.
+icon_adjust = "svgs i-moon" # Theme Switcher button in top menu.
+icon_contrast = "svgs i-sun" # Theme Switcher button in top menu.
+icon_top = "svgs i-angles-up" # Back to Top Button.
+icon_first = "svgs i-angles-left" # Pagination First Page.
+icon_prev = "svgs i-angle-left" # Pagination Previous Page.
+icon_next = "svgs i-angle-right" # Pagination Next Page.
+icon_last = "svgs i-angles-right" # Pagination Last Page.
 
 # For externally loaded Fonts, make sure to include the FULL url including the http/https prefix
 #fonts = [ {url = "https://fonts.googleapis.com/css?family=Montserrat:400,700,italic|Fira+Code:400,italic"} ]
