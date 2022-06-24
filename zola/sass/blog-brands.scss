@@ -3,22 +3,21 @@
     src: url('fonts/blog-brands.woff2') format('woff2');
 }
 
-[class^="i-"]:before,
-[class*=" i-"]:before {
+[class^="b-"]:before,
+[class*=" b-"]:before {
     font-family: "Blog-Brands";
     font-style: normal;
     font-weight: normal;
-    font-variant: normal; // reset parent styles that can break glyph codes
-    text-transform: none; // reset parent styles that can break glyph codes
-    line-height: 1em; // fix buttons height
-    width: 1em; // fix buttons width
-    vertical-align: 1em; // fix buttons alignment
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1em;
+    width: 1em;
+    vertical-align: 1em;
     text-align: center;
     display: inline-block;
-    //text-decoration: inherit;
 }
 
 // Rust Icon
-.i-rust:before {
-    content: '\f07a';
+.b-rust:before {
+    content: '\e07a';
 }

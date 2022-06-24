@@ -56,7 +56,7 @@ meta_post = { position="top", size="false", author=false, readtime=true, readstr
 
 footer_size = false # size: s95, s90, s85, s80, s75, s70, false(full size)
 footer_credit = true
-footer_credit_override = 'Built with <i class="svgs i-coffee"></i> and a <i class="svgs i-keyboard"></i> using <i class="svgs i-rust"></i><br><small><a href="https://github.com/simbleau/blog"><i class="svgs i-edit"></i> Edit on GitHub</a></small>'
+footer_credit_override = 'Built with <i class="svgs i-coffee"></i> and a <i class="svgs i-keyboard"></i> using <i class="svgs b-rust"></i><br><small><a href="https://github.com/simbleau/blog"><i class="svgs i-edit"></i> Edit on GitHub</a></small>'
 
 #uncomment one of the two lines, or neither, depending on which type of logo you want to use:
 #logo = { file="logo.svg", width="32", height="32", alt="Logo", text="Spencer C. Imbleau" }
@@ -105,7 +105,7 @@ js_theme = "theme.min.js" # Separate Always, comment out if using -auto/-light/-
 js_themeButton = "theme_button.js"# Bundleable
 js_bundle = "abridge-switcher.min.js"# Bundle JS File, comment out to disable (includes switcher)
 #stylesheets = [ "abridge-switcher.css" ] # Orange Automatic Dark/Light Theme based on browser/system preference with switcher
-stylesheets = [ "abridge-blue-switcher.css", "blog-icons.css" ] # Blue Automatic Night/Light Theme based on browser/system preference with switcher
+stylesheets = [ "abridge-blue-switcher.css", "blog-icons.css", "blog-brands.css" ] # Blue Automatic Night/Light Theme based on browser/system preference with switcher
 #stylesheets = [ "abridge-blueshade-switcher.css" ] # BlueShade Automatic Night/Light Theme based on browser/system preference with switcher
 
 ########## No Switcher ##########
