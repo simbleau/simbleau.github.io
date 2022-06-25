@@ -41,7 +41,7 @@ The following sections provide some examples which demonstrate how trivial it is
 Firstly, I will show markers. Markers are used to tag instantaneous events during the execution of an application. For example, dropping a marker can be used to annotate a step in an algorithm.
 
 Markers are injected with the `mark!` macro, which accepts a name for the event. It behaves similarly to the `println!` macro with argument formatting.
-```rs
+```rust
 use std::thread::sleep;
 use std::time::Duration;
 
@@ -66,7 +66,7 @@ Thread ranges are similar to markers, except they annotate a span of time, rathe
 
 Ranges are pushed with the `range_push!` macro, and popped with the `range_pop!` macro. Thread ranges are also safe to push and pop over thread boundaries, hence *thread* in the name.
 
-```rs
+```rust
 use std::thread::sleep;
 use std::time::Duration;
 
@@ -88,7 +88,7 @@ A range viewable from the timeline and events view in NSight Systems.
 ## Thread naming
 Lastly, threads can be named with the `name_thread!` macro. This macros will alias the calling OS thread with a friendly name. Currently, this macro works cross-platform and has been tested on MacOS, Windows, Linux, and Android.
 
-```rs
+```rust
 use std::thread::sleep;
 use std::time::Duration;
 
