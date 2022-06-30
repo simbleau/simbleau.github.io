@@ -46,8 +46,10 @@ Where:
 - 🔗 Source URL is linked
 - 🔗 License deed is linked
 
-### Asset attribution example
-> [Photo](#) by [Spencer C. Imbleau](https://spencer.imbleau.com) / [CC BY](LICENSE-CC-BY)
+### Asset/Photo attribution example
+<img src="zola/static/logo.svg" width="100px" height="100px"/>
+
+> [Logo](zola/static/logo.svg) by [Spencer C. Imbleau](https://spencer.imbleau.com) / [CC BY](LICENSE-CC-BY)
 
 Where:
 - ❓ Title **may** be documented
