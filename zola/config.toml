@@ -77,9 +77,6 @@ menu = [
     {url = "/tags/", name = '<i class="svgs i-tags"></i> Tags', slash = true},
 ]
 menu_footer = [
-    {url = "/about/", name = '<i class="svgs i-info"></i> About', slash = true},
-    {url = "/privacy/", name = '<i class="svgs i-privacy"></i> Privacy', slash = true},
-    {url = "/sitemap.xml", name = '<i class="svgs i-sitemap"></i> Sitemap', slash = false},
 ]
 
 # Security Headers should preferably be set by your webserver (Nginx, Apache) https://observatory.mozilla.org  https://csp-evaluator.withgoogle.com/
@@ -99,6 +96,7 @@ js_search_index = "search_index.en.js" # Separate Always, generated each build
 js_prestyle = "prestyle.js"# Bundleable - used to preload: FontAwesome, Katex, external Google Fonts
 js_search = [ "elasticlunr.min.js", "search.js" ]# Bundleable
 js_codecopy = "codecopy.js"# Bundleable
+js_email = "email.js"# Bundleable
 
 ########## Switcher ########## (comment this block out if NOT using switcher):
 js_theme = "theme.min.js" # Separate Always, comment out if using -auto/-light/-dark stylesheet. (required for switcher)
