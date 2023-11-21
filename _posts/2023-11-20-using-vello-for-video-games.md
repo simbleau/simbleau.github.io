@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "High performance vector graphic video games"
-description: "todo"
+description: "A look at the first compute-centric vector graphic 2d video game and where to go from here."
 date: 2023-11-20
 categories: rust graphics
 youtubeId: hNu5oF18j5g
