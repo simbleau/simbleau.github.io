@@ -4,6 +4,7 @@ title: "High performance vector graphic video games"
 description: "todo"
 date: 2023-11-20
 categories: rust graphics
+youtubeId: hNu5oF18j5g
 ---
 
 Vector images are notoriously unfit for modern GPU architecture because of an inherent locality issue. In contrast to raster graphics where color and fill information is explicitly encoded, rendering a pixel in a vector image requires knowledge of the entire image. Solving the fill of every pixel efficiently is a unique challenge, and *hard*. With the rising accessibility of compute kernels and low-level GPU architecture access over the past few years, especially from projects like [wgpu](https://wgpu.rs/), friction with general purpose GPU computing is fading. Projects like [vello](https://github.com/linebender/vello) are pioneering the 2d vector graphics space, and furthering the experimental research inspired by projects like [pathfinder](https://github.com/servo/pathfinder).
@@ -47,7 +48,7 @@ fn setup_assets(
 
 Architecturally, `bevy-vello` relies on two backends. The first is an `.svg` ETL library called [`vello-svg`](https://github.com/vectorgameexperts/vello-svg) which loads the SVG into a vello `SceneBuilder`. The second is [`vellottie`](https://github.com/vectorgameexperts/vellottie), a parser and runtime for [Airbnb's `.json` lottie](https://airbnb.io/lottie/) format, and a fork of Chad Brokaw's [velato](https://github.com/linebender/velato).
 
-<iframe width="100%" height="400" src="http://www.youtube.com/embed/hNu5oF18j5g" frameborder="0" allowfullscreen></iframe>
+{% include youtubePlayer.html id=page.youtubeId %}
 
 Strategically, it made sense to pursue both formats, but a painful lesson learned was that the `.svg` and `.json` lottie specifications are huge, with plenty of feature flags that aren't supported by vello. While writing a parser wasn't too bad with `serde`, triaging animation inconsistencies and rendering artifacts continue to be difficult. For the future, I think it's unlikely `vello-svg` will be maintained, and I'd rather explore options such as converting svg to a 1 frame lottie, or binary formats like Rive's [`.riv`](https://help.rive.app/runtimes/advanced_topics/format) runtime format, which is dually good at compression. Rive also just announced [their bevy runtime](https://github.com/rive-app/rive-bevy).
 
