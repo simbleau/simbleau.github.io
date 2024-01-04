@@ -5,6 +5,7 @@ description: "A look at the first compute-centric vector graphic 2d video game a
 date: 2023-11-20
 categories: rust graphics
 youtubeId: hNu5oF18j5g
+vongDemo: https://simbleau.github.io/vong/
 ---
 
 Vector images are notoriously unfit for modern GPU architecture because of an inherent locality issue. In contrast to raster graphics where color and fill information is explicitly encoded, rendering a pixel in a vector image requires knowledge of the entire image. Solving the fill of every pixel efficiently is a unique challenge, and *hard*. With the rising accessibility of compute kernels and low-level GPU architecture access over the past few years, especially from projects like [wgpu](https://wgpu.rs/), friction with general purpose GPU computing is fading. Projects like [vello](https://github.com/linebender/vello) are pioneering the 2d vector graphics space, and furthering the experimental research inspired by projects like [pathfinder](https://github.com/servo/pathfinder).
@@ -18,8 +19,6 @@ There are many compelling reasons I have gravitated towards the imaging model: p
 ![Vong](/assets/vong.png)
 
 Why is there no *κ*urvature in modern games? Needing to satisfy the understanding of why I've never seen a [Kurzgesagt-styled](https://www.behance.net/kurzgesagt) vector game led to creating one. So the decision to start by creating the classic game of Pong was deliberate, providing a foundational exploration of Vello's capabilities in rendering vector graphics dynamically. It felt appropriate to call the project *Vong*, joining "Vector" and "Pong".
-
-![Vong Closeup](/assets/vong-closeup.png)
 
 ### Rendering
 
@@ -56,20 +55,33 @@ Strategically, it made sense to pursue both formats, but a painful lesson learne
 
 Once rendering was solved, another thorny issue with pong is physics: collision detection between arbitrarily curved shapes is *hard*. While algorithms exist, none today are *obviously* good.
 
-Eventually I settled on tessellation as a decent proxy for physics. The technique is quite simple in concept: Flatten curves into line segments, generate a triangle mesh, and keep only a convex hull of the shape as a hitbox.
+Eventually I settled on tessellation as a decent proxy for physics. The technique is quite simple in concept: Flatten curves into line segments, generate a triangle mesh, and keep only a convex hull of the shape as a hitbox. Below is a figure of that algorithm.
+
 ![Tessellation](/assets/Tessellation.svg)
 
-This is obviously not true collision detection between arbitrary curves with infinitessimal precision, but was rather a compromise given a lack of algorithmically efficient alternatives.
+This is obviously not true collision detection between arbitrary curves with infinitessimal precision, but was rather a compromise given a lack of algorithmically efficient collision detection between curves.
+
+As with most things in game development, this is a hack, but a good one! Even when using a liberal tolerance for curve flattening, physics yield a high level of collision fidelity, nearly indistinguishable from the true underlying curves. Granted, this only works great since my egg is convex by nature.
+
+![Vong Closeup](/assets/vong-closeup.png)
 
 A less important, but fun quirk of vong is that the "pong ball" (egg) exhibits linear velocity and angular momentum provided by [`bevy_rapier`](https://rapier.rs/).
 
 ### Demo
 
-You may find the source code [here](https://github.com/simbleau/vong).
+**Is the frame immediately below solid black?** Vong uses compute shaders. Make sure your browser is updated to [Chrome M113](https://chromestatus.com/feature/6213121689518080) or another browser compatible with [WebGPU](https://caniuse.com/?search=webgpu)!
 
-Right now I'm working on a porting the demo to web, so in a few days this gif should be replaced with the web demo. You can still build and play it natively from source with `cargo run`.
+{% include iframe.html src=page.vongDemo %}
 
-![Vong](https://user-images.githubusercontent.com/48108917/220213333-9490b8f5-56f7-42e2-a26e-b73bd387e24e.gif)
+Controls:
+
+- `Up`/`Down` (Arrow keys): Scale camera
+- `PgUp`/`PgDown`/`Home`/`End`: Free camera
+- `W`/`S`: Left bacon
+- `I`/`J`: Right bacon
+- `C`: Watch egg intensely
+
+You may find the source code [here](https://github.com/simbleau/vong). You may also build and play this natively with `cargo run`.
 
 ## What now?
 
