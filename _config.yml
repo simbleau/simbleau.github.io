@@ -35,6 +35,10 @@ theme: minima
 plugins:
 - jekyll-feed
 
+# FIX: See https://github.com/jekyll/minima/issues/709
+sass:
+  quiet_deps: true
+
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to
