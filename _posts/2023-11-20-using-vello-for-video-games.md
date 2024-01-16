@@ -17,7 +17,7 @@ Yes, the image model that uses points, lines, and equations to encode image data
 
 The internet has done this once meaningfully in the past. In the 2000s, a herculean effort to optimize the performance of interactive vector graphics brought an advent of vector games through Adobe's Shockwave Flash player. But in the wake of SWF's deprecation from major browsers, there wasn't a worthy successor, and the era of web games died off. Unfortunately, efforts like HTML5 and WebGL were never able to replace what was lost.
 
-Hence, I believe the first games to understand and successfully use this image model under the constraints of major browsers could benefit from content-delivery savings, resolution independence, and offer novel applications of interactivity, physics, and non-descructive transformations.
+Hence, I believe the first games to understand and successfully use this image model under the constraints of major browsers could benefit from content-delivery savings, resolution independence, and offer novel applications of interactivity, physics, and non-destructive transformations.
 
 ## Onto the papercuts
 
@@ -29,11 +29,11 @@ The high-level strategy used by these new hardware-accelerated renderers is to c
 
 ![Vong](/assets/vong.png)
 
-The technical leap was implemented in [vello](https://github.com/linebender/vello) (*formerly piet-gpu*), started by [Raph Levien](https://levien.com/) and my cohorts in [the linebender community](https://linebender.org). The Vello API depends on WebGPU to provide an abstraction layer to targets, while offering more accessibility to low-level hardware like compute shaders. It's for these reasons rust, webgpu, and vello would make a perfect combination for cross-platform vector games with one code-base.
+The technical leap was implemented in [vello](https://github.com/linebender/vello) (*formerly piet-gpu*), started by [Raph Levien](https://levien.com/) and my colleagues in [the linebender community](https://linebender.org). The Vello API depends on WebGPU to provide an abstraction layer to targets, while offering more accessibility to low-level hardware like compute shaders. It's for these reasons rust, webgpu, and vello would make a perfect combination for cross-platform vector games with one code-base.
 
 ![Vong](/assets/webgpu.svg)
 
-This since has spurred on my race to prove the lost benefits are still relevant. In a sudden case of reviving-the-horse syndrome, I worked with a few colleagues from my previous tenure at NASA to understanding the unknowns of why I've never seen a modern [Kurzgesagt](https://www.behance.net/kurzgesagt) vector game. Hence, the decision to start by creating the classic game of Pong was deliberate, providing a foundational exploration of Vello's capabilities in rendering vector graphics dynamically. It felt appropriate to call the project *Vong*, joining "Vector" and "Pong".
+This spurred on my race to prove the lost benefits are still relevant. In a sudden case of reviving-the-horse syndrome, I worked with a few colleagues from my previous tenure at NASA to understanding the unknowns of why I've never seen a modern [Kurzgesagt](https://www.behance.net/kurzgesagt) vector game. Hence, the decision to start by creating the classic game of Pong was deliberate, providing a foundational exploration of Vello's capabilities in rendering vector graphics dynamically. It felt appropriate to call the project *Vong*, joining "Vector" and "Pong".
 
 Matching webgpu, vello, and rust's strengths, [bevy](https://bevyengine.org/) was the obvious choice for a cross-platform open source game engine. It also uses webgpu, and was developed open-source and code-first.
 
