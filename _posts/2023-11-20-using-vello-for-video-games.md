@@ -9,7 +9,7 @@ youtubeId: hNu5oF18j5g
 vongDemo: https://simbleau.github.io/vong/
 ---
 
-For a few years, I've been trying to solve a hard problem problem, *"How can I use vector graphics as the backing image model in realtime systems?"*
+For a few years I've been trying to solve a hard problem. *"How can I use vector graphics as the backing image model in realtime systems?"*
 
 Yes, the image model that uses points, lines, and equations to encode image data. Of which, several common encoding formats exist, like SVG, PDF.
 
