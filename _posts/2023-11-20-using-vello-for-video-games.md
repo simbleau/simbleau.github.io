@@ -52,7 +52,6 @@ fn setup_assets(
         VelloVectorBundle {
             vector: asset_server.load("egg.svg"),
             origin: bevy_vello::Origin::Center,
-            layer: bevy_vello::Layer::Foreground,
             transform: Transform::from_scale(Vec3::splat(0.1)),
             ..Default::default()
         }
