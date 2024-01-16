@@ -98,7 +98,7 @@ Controls:
 - `Up`/`Down` (Arrow keys): Scale camera
 - `PgUp`/`PgDown`/`Home`/`End`: Free camera
 - `W`/`S`: Left bacon
-- `I`/`J`: Right bacon
+- `I`/`K`: Right bacon
 - `C`: Watch egg intensely
 
 You may find the source code [here](https://github.com/simbleau/vong). You may also build and play this natively with `cargo run`.
