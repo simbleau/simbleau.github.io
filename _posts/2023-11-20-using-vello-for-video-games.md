@@ -71,7 +71,7 @@ Once rendering was solved, another thorny issue with pong was physics: collision
 
 Eventually I settled on tessellation as a decent proxy for physics. The technique is quite simple in concept.
 
-First, curves as flattened into line segments with configurable accuracy (aka *"tolerance"*).
+First, curves are flattened into line segments with configurable accuracy (aka *"tolerance"*).
 
 ![Tessellation](/assets/Flattening.svg)
 
