@@ -73,11 +73,13 @@ Eventually I settled on tessellation as a decent proxy for physics. The techniqu
 
 First, curves are flattened into line segments with configurable accuracy (aka *"tolerance"*).
 
-![Tessellation](/assets/Flattening.svg)
+![Tessellation](/assets/Flattening.svg)\
+*Attribution: Image from [Lyon](https://github.com/nical/lyon), licensed under MIT/Apache 2.0*
 
 Then, vertices are paired to generate a triangle mesh. The resulting triangle mesh is used to derive a [convex hull](https://en.wikipedia.org/wiki/Convex_hull_algorithms) hitbox.
 
-![Tessellation](/assets/Tessellation.svg)
+![Tessellation](/assets/Tessellation.svg)\
+*Attribution: Image from [Lyon](https://github.com/nical/lyon), licensed under MIT/Apache 2.0. Modified by Spencer Imbleau.*
 
 This is obviously not true collision detection between arbitrary curves with infinitessimal precision, but was rather a compromise given a lack of algorithmically efficient collision detection between curves.
 
@@ -89,7 +91,8 @@ The [`lyon`](https://github.com/nical/lyon) library was used for tessellation an
 
 ### Demo
 
-**Is the frame immediately below solid black?** Vong uses compute shaders. Make sure your browser is updated to [Chrome M113](https://chromestatus.com/feature/6213121689518080) or another browser compatible with [WebGPU](https://caniuse.com/?search=webgpu)!
+**Is the frame immediately below solid black?** Vong uses compute shaders. Make sure your browser is updated to [Chrome M113](https://chromestatus.com/feature/6213121689518080) or another browser compatible with [WebGPU](https://caniuse.com/?search=webgpu)!\
+*Edit 1/31: It seems Firefox Nightly, even with the WebGPU flag, is having issues. For now, please use Chrome.*
 
 {% include iframe.html src=page.vongDemo %}
 
