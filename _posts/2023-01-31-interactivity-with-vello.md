@@ -4,6 +4,7 @@ title: "Surveying the landscape of interactive vector graphics"
 description: "Surveying the current state of art in vector graphic interactivity"
 date: 2024-02-20
 categories: rust graphics
+riveWalkBlend: https://public.rive.app/community/runtime-files/7656-14740-walk-cycle-blend.riv
 ---
 
 In this article, I aim to provide an overview of the current state of interactive vector graphics, particularly focusing on its significance and the ongoing developments in the field.
@@ -16,16 +17,58 @@ Interactivity isn't just about making things pretty and playful; it's also integ
 
 ### Key formats
 
-There are three formats worth looking at today:
+This blog will mainly focus on comparing dotLottie and Rive files.
 
-- [Lottie](https://en.wikipedia.org/wiki/Lottie_(file_format)): A JSON format to encode vector animations. By itself, it offers no interactivity, it is just an animation. It is completely open source, and recently standardized under the Linux Foundation. [dotLottie](https://dotlottie.io/) is also open source, and offers a capability extension to Lottie to enable interactivity.
-- [Riv](https://rive.app): Developed by a commercial entity, Rive, this closed-source binary format offers advanced features.
+#### .lottie format
 
-## Trending
+[dotLottie](https://dotlottie.io/) (extension `.lottie`) is a format that composes [Lottie JSON](https://en.wikipedia.org/wiki/Lottie_(file_format)) (extension `.json`) files and adds interactive capabilities. By itself, Lottie JSON files are only encoded vector animations; they offer no interactivity.
 
-Recently announced, a standards committee under the Linux foundation will bring a concerted effort towards establishing Lottie as "an efficient, scalable and cross-platform animated vector graphics technology and open file format." It is developing the [`lottie-spec` in the open, on GitHub](https://github.com/lottie/lottie-spec).
+dotLottie and Lottie are [on GitHub](https://github.com/lottie/lottie-spec), and Lottie was [recently standardized under the Linux Foundation](https://www.linuxfoundation.org/press/announcing-lottie-animation-community). dotLottie as a format supports state machines, color swapping (themeing), and more. There isn't much magic under the carpet, a dotLottie file is simply a renamed ZIP archive with the following structure:
 
-While this direction is promising, we are witnessing some fragmentation in how to extend vector formats for interactivity. Currently two competing approaches are underway.
+```text
+.
+├─ manifest.json
+├─ animations/
+│  ├─ animation-1.json
+│  └─ animation-2.json
+├─ states/
+│  ├─ statemachine_0.json
+│  └─ statemachine_1.json
+├─ themes/
+│  └─ theme1.lss
+├─ images/
+└─ audio/
+```
+
+#### .riv format
+
+.riv files are exported by a bespoke editor on the [Rive](https://rive.app) platform. Unlike Lottie, Rive is closed-source commercial platform, and human editing of riv files is not possible.
+
+Rive can have interactivity embedded throughout the file with inputs, constraints, nested animations, and state blending. It is quite intricate and something we will cover more in the following sections, because I think it's in a technical league far ahead of dotLottie.
+
+{% include rive-frame.html src=page.riveWalkBlend %}
+
+{% include rive-frame.html src=page.riveDemo %}
+
+## Features
+
+Here's my best stab at comparing the formats by feature:
+
+| Feature             | .lottie (dotLottie)  | .riv (Rive)      |
+|---------------------|----------------------|------------------|
+| File Format         | Binary               | Binary           |
+| Compression         | Zip ([DEFLATE](https://en.wikipedia.org/wiki/Deflate))        | Unknown          |
+| File Size           | Small                | Compact          |
+| Animation Support   | Yes                  | Yes              |
+| Platform Support    | Wide range           | Wide range       |
+| Interactivity       | Limited              | Advanced         |
+| Playback Controls   | Limited              | Advanced         |
+| Customization       | Limited              | Advanced         |
+| Tooling             | Limited              | Advanced         |
+| Documentation  | Good              | Good         |
+| Cost                | Free                 | [Starts $24/user/month](https://rive.app/pricing) |
+| Development         | [LAC](https://lottie.github.io/), open-source     | [Rive](https://rive.app)             |
+
 
 ### dotLottie (.lottie)
 
@@ -46,10 +89,26 @@ I think we will soon benefit from more competition in the space, since Rive is o
 
 LottieLab is one such company I'm most optimistic for, with a Figma-like editor to create Lottie animations. They have also announced a reasonable interest in supporting interactivity similar to Rive, but with more emphasis in the web graphic space rather than deep interactive space, built more for games (Rive).
 
+## Rive as a Northstar
+
+![Walk cycle blend](/assets/walk-blend.png)
 
 ### Comparison / GAP analysis
 
 TODO: Turn this into a feature table (either Supported, Planned, Not Supported)
+
+TODO: use dotLottie public roadmap: https://dotlottie.io/roadmap/
+Roadmap
+    Audio layers support [soon]
+    Video layers support [soon]
+    Simplified expressions language
+    General scripting engine
+    Mouse and touch interactivity support
+    Keyboard interactivity support
+    Sensors (compass, acceleration) interactivity support
+    Haptics support
+    Network access support
+    3D support [long-term]
 
 dotLottie:
 - State machine
@@ -217,4 +276,5 @@ SVG vs. Lottie state machines
 - LSS macros
 - Optimization
 - A code-first library for lottie manipulation. Would be helpful for particle generators, etc. - DrawBot
-- Nesting dotLottie
+- Nesting lotties/dotLotties in eachother
+- It would be cool to see Themeing and LSS output in LottieLab

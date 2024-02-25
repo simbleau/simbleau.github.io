@@ -1,0 +1,17 @@
+<canvas id='{{ include.src }}' style="width: 100%; height: 400px"></canvas>
+
+<script src="https://unpkg.com/@rive-app/canvas"></script>
+<script>
+  {
+    var canvasElement = document.getElementById('{{ include.src }}');
+    var r = new rive.Rive({
+      src: "{{ include.src }}",
+      canvas: canvasElement,
+      autoplay: true,
+      onLoad: () => {
+        r.resizeDrawingSurfaceToCanvas();
+      },
+      stateMachines: "State Machine 1"
+    });
+  }
+</script>
