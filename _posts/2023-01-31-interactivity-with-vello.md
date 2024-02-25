@@ -1,13 +1,14 @@
 ---
 layout: post
 title: "Surveying the landscape of interactive vector graphics"
-description: "Surveying the current state of art in vector graphic interactivity"
+description: "Surveying the current state of art in vector graphic interactivity, focusing on dotLottie and Rive"
 date: 2024-02-20
 categories: rust graphics
+riveDemo: https://cdn.rive.app/animations/vehicles.riv
 riveWalkBlend: https://public.rive.app/community/runtime-files/7656-14740-walk-cycle-blend.riv
 ---
 
-In this article, I aim to provide an overview of the current state of interactive vector graphics, particularly focusing on its significance and the ongoing developments in the field.
+In this article, I aim to provide an overview of the current state of interactive vector graphics, particularly focusing on its significance and the ongoing developments in the field. There will be interest given to Lottie and Rive.
 
 ## Interactivity?
 
@@ -15,15 +16,40 @@ Interactivity in vector graphics refers to the capability of graphics to respond
 
 Interactivity isn't just about making things pretty and playful; it's also integral for modern UI, games, and other applications. Vector graphics offer scalability and adaptability, making them highly desirable for designers and developers due to their resolution-independent nature.
 
-### Key formats
+### Study: Spotify R&D
 
-This blog will mainly focus on comparing dotLottie and Rive files.
+Spotify recently explored [Lottie JSON](https://en.wikipedia.org/wiki/Lottie_(file_format)) (extension `.json`), as a vector animation format to improve their adored tradition, "[Spotify Wrapped](https://newsroom.spotify.com/2023-wrapped/)." Every year Spotify provides a summary to each user of their yearly content consumption, in a flashy animated format, customized to each user. It's like a parade for your tax documents, if your audio needed that.
 
-#### .lottie format
+They wrote about this change in an engineering blog: <https://engineering.atspotify.com/2024/01/exploring-the-animation-landscape-of-2023-wrapped/>
 
-[dotLottie](https://dotlottie.io/) (extension `.lottie`) is a format that composes [Lottie JSON](https://en.wikipedia.org/wiki/Lottie_(file_format)) (extension `.json`) files and adds interactive capabilities. By itself, Lottie JSON files are only encoded vector animations; they offer no interactivity.
+> "Spotify \[embraced\] a Lottie-first principle whenever practical. Instead of having multiple engineers individually create the same animation for each platform, motion designers create a single animation file that is served to all platforms. Additionally, Lottie provides visual parity across all platforms and has removed the need for engineers to investigate technical feasibility, which typically requires the efforts of multiple engineers over several days. With Lottie, we’re able to paint a cohesive experience for our users while allowing our engineering team to focus on other essential tasks."
 
-dotLottie and Lottie are [on GitHub](https://github.com/lottie/lottie-spec), and Lottie was [recently standardized under the Linux Foundation](https://www.linuxfoundation.org/press/announcing-lottie-animation-community). dotLottie as a format supports state machines, color swapping (themeing), and more. There isn't much magic under the carpet, a dotLottie file is simply a renamed ZIP archive with the following structure:
+Before Lottie, Spotify used programmers to write native animations in code to tailor the experience and animations to the user. These native animations were rich, transformative experiences with interactivity, but they were slow to create.
+
+Because vector graphics offer a resolution-independent imaging model, it made sense to pursue tooling that could alleviate the burden on programmers and save costs with animators. Transformative content is hard to code, and I wholeheartedly applaud their inventive spirit and bias for action here.
+
+One thing, however, I disagreed with...
+
+> "Lottie especially shines when utilized for generic animations."
+
+Lottie was categorically dismissed for cases requiring interactivity, user preference, and customization. Native (coded) animations were continued in these cases, and little explanation was given on *why*.
+
+I think there’s appetite for more interactivity with the Lottie format. As a runtime format, there's nothing stopping humans from applying runtime transformations. 
+
+due to its implicit encoding. Normal, raster graphics are simple multi-line 
+
+ The problem is that no code-first abstractions to Lottie exist. Nothing as simple as the PostScript API, since I saw that recently mentioned. Hence, Spotify used native animations to fill the gap where Lottie files were hard to customize either with code or tooling. I wish they explored the technology hole there.
+
+
+## dotLottie (.lottie) format
+
+We'll start with [dotLottie](https://dotlottie.io/) (extension `.lottie`).
+
+dotLottie is a format that composes [Lottie JSON](https://en.wikipedia.org/wiki/Lottie_(file_format)) (extension `.json`) files and adds interactive capabilities. Lottie, by itself, is only encoded vector animations; it offers no interactivity.
+
+dotLottie and Lottie are [on GitHub](https://github.com/lottie/lottie-spec), and Lottie was [recently standardized under the Linux Foundation](https://www.linuxfoundation.org/press/announcing-lottie-animation-community). I tend to think of dotLottie as the first attempt to standardize capability *after* Lottie.
+
+dotLottie as a format supports state machines, color swapping (themeing), and more. There isn't much magic under the carpet, a dotLottie file is simply a renamed ZIP archive with the following structure:
 
 ```text
 .
@@ -40,17 +66,29 @@ dotLottie and Lottie are [on GitHub](https://github.com/lottie/lottie-spec), and
 └─ audio/
 ```
 
-#### .riv format
+### State machines
 
-.riv files are exported by a bespoke editor on the [Rive](https://rive.app) platform. Unlike Lottie, Rive is closed-source commercial platform, and human editing of riv files is not possible.
+TODO
 
-Rive can have interactivity embedded throughout the file with inputs, constraints, nested animations, and state blending. It is quite intricate and something we will cover more in the following sections, because I think it's in a technical league far ahead of dotLottie.
+### Playback controls
 
-{% include rive-frame.html src=page.riveWalkBlend %}
+TODO
 
-{% include rive-frame.html src=page.riveDemo %}
+### Runtime augments (Themes)
 
-## Features
+TODO
+
+
+## Rive (.riv) format
+
+A Rive file `.riv` is a closed-source format with distinct embedded support for states, triggers, and interactivity throughout the file. The approach fundamentally enables a deeper level of interactivity. `.riv` files are exported by a bespoke editor on the [Rive](https://rive.app) platform. Unlike Lottie, Rive is closed-source commercial platform, and human editing of riv files is not possible.
+
+Rive covers many more use-cases than dotLottie - with inputs, constraints, nested animations, and state blending. It is quite intricate and something we will cover more in the following sections, because I think it's in a technical league far ahead of dotLottie.
+
+{% include rive-frame.html id='demo' src=page.riveDemo statemachine='bumpy' %}
+*Attribution: 'Vehicles' example from [Rive](https://rive.app)*
+
+## A vague comparison
 
 Here's my best stab at comparing the formats by feature:
 
@@ -62,32 +100,20 @@ Here's my best stab at comparing the formats by feature:
 | Animation Support   | Yes                  | Yes              |
 | Platform Support    | Wide range           | Wide range       |
 | Interactivity       | Limited              | Advanced         |
-| Playback Controls   | Limited              | Advanced         |
-| Customization       | Limited              | Advanced         |
 | Tooling             | Limited              | Advanced         |
 | Documentation  | Good              | Good         |
 | Cost                | Free                 | [Starts $24/user/month](https://rive.app/pricing) |
 | Development         | [LAC](https://lottie.github.io/), open-source     | [Rive](https://rive.app)             |
 
+### The paper dragon
 
-### dotLottie (.lottie)
+It's easy to point to two paper-doll pieces from dotLottie and Rive and assume they offer the same capability, which is naively true. I often point to this "Walk Cycle Blend" animation in Rive to show the difference:
 
-dotLottie (`.lottie`) is an open source format to provide *addititve interactivity* to Lottie through state maxchines.
+{% include rive-frame.html id='walk' src=page.riveWalkBlend statemachine='State Machine 1'%}
+*Attribution: ['Walk Cycle Blend'](https://rive.app/community/7656-14740-walk-cycle-blend/) example from [@whereisross](https://rive.app/@whereisross/), CC By 4.0*
 
-dotLottie has identified several additive features to augment playback of a Lottie file:
-- [Playback options](https://docs.lottiefiles.com/dotlottie-js-external/interactivity/playback-settings):
-
-which adds state machines, playback settings, and color remapping (themes). However, the state machines only apply to adjust the entire image through playback options or switching the active Lottie JSON and colors.
-
-### Rive file (.riv)
-
-A Rive file `.riv` is a closed-source format with distinct embedded support for states everywhere in the file.
-
-Other companies like Rive are enabling a deeper level of interactivity. Rive offers a bespoke editor which enables animators and designers to create interactive vector graphic experiences with state machines. State machines using Rive are much more advanced, allowing parts of the image to change with specific state machine variables. The editor is very good, runtime, and file format is compressed. Rive is doing so absolutely for rich profits and has no intention of contributing to any open-source entities.
-
-I think we will soon benefit from more competition in the space, since Rive is operating as if they're a monopoly, recently raising their prices from $6/user to nearly 10x.
-
-LottieLab is one such company I'm most optimistic for, with a Figma-like editor to create Lottie animations. They have also announced a reasonable interest in supporting interactivity similar to Rive, but with more emphasis in the web graphic space rather than deep interactive space, built more for games (Rive).
+This walk-cycle blend simply isn't possible with dotLottie right now.
+It relies on a feature unique to rive called "state blending".
 
 ## Rive as a Northstar
 
@@ -168,24 +194,6 @@ Up and coming:
   - A vector design tool with limited public information. Their progress is not public. I was their 2nd onboard for a demo but it was quite impressive and had comparable feature to Lottiefiles and LottieLab.
 - [Jitter](https://jitter.video/)
   - More focused on exporting to Video, but they now have a Beta export to Lottie, making them a player
-
-### Case study: Spotify R&D
-
-Spotify has recently made some exploration with a business use-case. Every year Spotify provides a summary to each user of their most listened to and favorite artists and albums, called "Spotify Wrapped", which has become popular to millions of people each year.
-
-They wrote about this change in an engineering blog: <https://engineering.atspotify.com/2024/01/exploring-the-animation-landscape-of-2023-wrapped/>
-
-Spotify said, and quote:
-
-> "Spotify \[embraced\] a Lottie-first principle whenever practical. Instead of having multiple engineers individually create the same animation for each platform, motion designers create a single animation file that is served to all platforms. Additionally, Lottie provides visual parity across all platforms and has removed the need for engineers to investigate technical feasibility, which typically requires the efforts of multiple engineers over several days. With Lottie, we’re able to paint a cohesive experience for our users while allowing our engineering team to focus on other essential tasks."
-
-I support the idea, generally, that it makes business sense to put designers first in creating interactive experiences, rather than programmers. It is more in designer domain and could save time and money.
-
-However, I did somewhat disagree to one of their sailing points:
-
-> "Lottie especially shines when utilized for generic animations."
-
-My immediate reaction is that Spotify didn’t go any further than suiting a business need. They seem to categorically dismiss Lottie for anything requiring interactivity, user preference, and customization. Their characterization of Lottie being best suited for generic animations is one I don’t particularly agree with. I think there’s appetite for more interactivity in Lottie files. As a runtime format, it could excel with runtime transformations due to its implicit encoding. The problem is that no code-first abstractions to Lottie exist. Nothing as simple as the PostScript API, since I saw that recently mentioned. Hence, Spotify used native animations to fill the gap where Lottie files were hard to customize either with code or tooling. I wish they explored the technology hole there.
 
 ## Implementing Interactivity
 
