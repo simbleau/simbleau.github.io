@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Surveying the landscape of interactive vector graphics"
+title: "Surveying interactive vector graphic formats"
 description: "Surveying the current state of art in vector graphic interactivity, focusing on dotLottie and Rive"
 date: 2024-02-20
 categories: rust graphics
@@ -8,41 +8,44 @@ riveDemo: https://cdn.rive.app/animations/vehicles.riv
 riveWalkBlend: https://public.rive.app/community/runtime-files/7656-14740-walk-cycle-blend.riv
 riveCustomize: https://public.rive.app/community/runtime-files/8463-16227-customize-your-avatar.riv
 riveTheme: https://public.rive.app/community/runtime-files/8771-16784-darklight-mode-switch.riv
+riveStateMachine: https://public.rive.app/community/runtime-files/6413-12421-lil-guy.riv
+lottieRocket: /assets/rocket.json
+lottieBlueRocket: /assets/rocket-blue.json
 ---
 
-In today's tech-driven landscape, interactive vector graphics are shaping the way we experience digital interfaces across applications. This article is a deep dive into the evolution and potential of this dynamic medium, with a spotlight on dotLottie and Rive. Interactivity isn't just an aesthetic touch — it's fundamental to engaging user experiences in modern UI, gaming, and more.
+In this article, I aim to provide an overview of the current state of interactive vector graphics, particularly focusing on its significance and the ongoing developments in the field. There will be interest specifically given to Lottie, dotLottie, and Rive.
 
-## Interactivity?
+## Defining "Interactivity"
 
 Interactivity isn't just about making things pretty and playful, it is a way to transform the user experience. This functionality is essential for modern user interfaces, which strive to be as intuitive as they are visually appealing.
 
-### Study: Spotify R&D
+## Re: Spotify Wrapped 2023
 
-Spotify recently explored [Lottie JSON](https://en.wikipedia.org/wiki/Lottie_(file_format)) (extension `.json`), as a vector animation format to improve their adored tradition, "[Spotify Wrapped](https://newsroom.spotify.com/2023-wrapped/)." Every year Spotify provides a summary to each user of their yearly content consumption, in a flashy animated format, customized to each user. It's like a parade for your tax documents, if your audio needed that.
+Every year Spotify provides a summary to each user of their yearly content consumption, in a flashy animated format, customized to each user. It's like a parade for your tax documents, if your audio needed that.
 
-They wrote about this change in an [engineering blog](https://engineering.atspotify.com/2024/01/exploring-the-animation-landscape-of-2023-wrapped/):
+They explored [Lottie JSON](https://en.wikipedia.org/wiki/Lottie_(file_format)) (extension `.json`) as a vector animation format to improve their adored tradition, "[Spotify Wrapped](https://newsroom.spotify.com/2023-wrapped/)," and published findings on their public engineering blog, titled *"[Exploring the Animation Landscape of 2023 Wrapped](https://engineering.atspotify.com/2024/01/exploring-the-animation-landscape-of-2023-wrapped/)."*
 
 > "Spotify \[embraced\] a Lottie-first principle whenever practical. Instead of having multiple engineers individually create the same animation for each platform, motion designers create a single animation file that is served to all platforms. Additionally, Lottie provides visual parity across all platforms and has removed the need for engineers to investigate technical feasibility, which typically requires the efforts of multiple engineers over several days. With Lottie, we’re able to paint a cohesive experience for our users while allowing our engineering team to focus on other essential tasks."
 
-Before Lottie, Spotify used programmers to write native animations in code to tailor the experience and animations to the user. These native animations were rich, transformative experiences with interactivity, but they were slow to create.
+Before Lottie, Spotify used engineers to write native animations in code to tailor the experience to the user. These native animations were customized, transformative experiences... and slow to create. Lottie animations offered a workflow requiring no engineers (likely motivated by time or cost).
 
-Because vector graphics offer a resolution-independent imaging model, it made sense to pursue tooling that could alleviate the burden on programmers and save costs with animators. Transformative content is hard to code, and I wholeheartedly applaud their inventive spirit and bias for action here.
+|Lottie|Native|
+|:----:|:----:|
+| ![Lottie](https://storage.googleapis.com/production-eng/1/2024/01/Lottie-genre-animation.gif) | ![Native](https://storage.googleapis.com/production-eng/1/2024/01/Native-Animation_Genre.gif) |
 
-One statement, however, I questioned:
+After reading their engineering blog, one statement didn't sit well with me:
 
 > "Lottie especially shines when utilized for generic animations."
 
-Lottie was categorically dismissed for cases requiring interactivity, user preference, and customization. Native (coded) animations were continued in these cases, and little explanation was given on *why*.
-
-That sentiment leaves room for investigation: Just how much interactive potential does the Lottie format hold, and what could push its boundaries further?
+Spotify categorically dismissed Lottie for situations requiring interactivity or customization. Native (coded) animations were still developed in these cases. I found myself hungry (not just for sandwiches), wanting to hear more about *why*! That sentiment leaves room for investigation: Just how much interactive potential does the Lottie format hold, and what could push its boundaries further?
 
 ## Unpacking the dotLottie (.lottie) format
 
-The [dotLottie](https://dotlottie.io/) (extension `.lottie`), which isn't mentioned in Spotify's study, is a format that composes [Lottie JSON](https://en.wikipedia.org/wiki/Lottie_(file_format)) (extension `.json`) files and adds interactive capabilities. Lottie, by itself, is only encoded vector animations; it offers no interactivity.
+My first exploration of this topic led to *dotLottie*, a [Linux Foundation standard](https://www.linuxfoundation.org/press/announcing-lottie-animation-community) and [open source](https://github.com/lottie/lottie-spec) capability *over* Lottie.
 
-dotLottie and Lottie are [on GitHub](https://github.com/lottie/lottie-spec), and Lottie was [recently standardized under the Linux Foundation](https://www.linuxfoundation.org/press/announcing-lottie-animation-community). I tend to think of dotLottie as the first attempt to standardize capability *over* Lottie.
+Surprisingly, [dotLottie](https://dotlottie.io/) (extension `.lottie`), isn't mentioned in Spotify's study.
 
-dotLottie as a format supports state machines, color swapping (themeing), and more. There isn't much magic under the carpet, a dotLottie file is simply a renamed ZIP archive with the following structure:
+Lottie, by itself, is only a single vector animation with no interactivity. dotLottie adds capability with support for multiple (Lottie) animations, playback settings, state machines, and color swapping (themeing). There isn't much magic under the carpet, as a dotLottie file is simply a renamed ZIP archive with the following structure:
 
 ```text
 .
@@ -61,15 +64,13 @@ dotLottie as a format supports state machines, color swapping (themeing), and mo
 
 ### State machines
 
-dotLottie focuses on state machines, a manifest of states and transitions. A state alone is a combination of an asset (Lottie file), playback options, a theme, and transitions.
-
-Representing this in Rust code would look like this:
+Representing a dotLottie state in Rust code would look something like this:
 
 ```rust
 struct State {
     /// The ID of this state
     id: String,
-    /// The Lottie file
+    /// The Lottie file to play
     asset: LottieFile
     /// Optional: A theme (color pallete)
     theme: Option<Theme>,
@@ -80,12 +81,23 @@ struct State {
 }
 ```
 
-There can be any number of transitions. Right now the format enumerates only a few options. I've enumerated these in code for consistentcy:
+A dotLottie runtime player then picks up the state machine and automates the transitions. The transitions dotLottie currently supports are:
+
+- onComplete : Transitions after the current animation finishes
+- onAfter: Transitions after a number of seconds
+- onShow: Transitions on the first visible frame
+- onMouseEnter: Transitions when a mouse enters the animation bounding box
+- onMouseLeave: Transitions when a mouse exits the animation bounding box
+- onMouseClick: Transitions when a mouse clicks inside the animation bounding box
+
+My initial reaction was that dotLottie transitions seem *very* limited and biased towards desktop users, however, I found that most common platform-specific transitions like mobile gestures are planned on [the dotLottie roadmap](https://dotlottie.io/roadmap/). Touch gestures, keybaord events, etc. are coming *"soon."*
+
+For consistency, I've enumerated these in code as well:
 
 ```rust
 enum Transition {
     /// Transitions to the given state after a period of seconds.
-    OnAfter { state: String, dur: Duration },
+    OnAfter { state: String, after: Duration },
     /// Transition to the given state after the animation finishes.
     OnComplete { state: String },
     /// Transition to the given state when the mouse enters the image bounding box.
@@ -97,13 +109,11 @@ enum Transition {
 }
 ```
 
-My initial reaction was that dotLottie transitions seem *very* limited and biased towards desktop users, however, I found that most common platform-specific transitions like mobile gestures are planned on [the dotLottie roadmap](https://dotlottie.io/roadmap/).
-
 ### Playback options
 
-Playback options, when composed in states, allow augmenting playback for the current state's asset (Lottie file).
+Playback options, present in states, allow augmenting playback for the current state's asset (Lottie file).
 
-The settings cover a broad range of augments a typical user would want:
+The supported options feel good enough for most users:
 
 ```rust
 struct PlaybackOptions {
@@ -129,15 +139,13 @@ struct PlaybackOptions {
 
 ### Themes
 
-Taking a step back, about a year ago, I worked on a proof of concept to add color swapping to Lottie animations for game development.
+Taking a step back, about a year ago, I worked on a proof of concept to add color swapping to Lottie animations for game development. The solution I explored was creating a list of colors, which could be applied by a selector of layer name and shape index.
 
 ![Color swap editor](/assets/color-editor.png)
 
-The solution explored was to create a "Color Pallette," or a list of colors. Then, color remapping could be applied to a selector by layer name and shape index.
+dotLottie, on the other hand, created a bespoke CSS-inspired language called [LSS](https://lottiefiles.github.io/lottie-styler/), "Lottie Style Sheets" \[[Usage](https://developers.lottiefiles.com/docs/dotlottie-js/theming/)\].
 
-dotLottie, on the other hand, [innovated heavily](https://developers.lottiefiles.com/docs/dotlottie-js/theming/) with a CSS-inspired DSL called [LSS](https://lottiefiles.github.io/lottie-styler/) ("Lottie Style Sheets").
-
-This really feels like a thoughful execution of themeing Lottie files, with the ability to re-imagine strokes and fills for Lottie files. Exactly like CSS, it features a selector-based language with properties that can be changed.
+This really feels like a thoughtful innovation for themeing Lottie files, with the ability to re-imagine strokes and fills for Lottie files. Exactly like CSS, it features a selector-based language with properties that can be changed.
 
 ```css
 GradientStrokeShape {
@@ -145,7 +153,21 @@ GradientStrokeShape {
 }
 ```
 
-*Edit*: The documentation site is busted. See [#38](https://github.com/LottieFiles/lottie-styler/issues/38) for details. If this gets fixed, please submit a PR to remove this line! :)
+It has always been possible to change Lottie colors if you have the know-how and a text editor. For example, here is a fragment of a Lottie file, with the color `k` ({% include highlight.html background='#ed6a65' foreground='#fff' text='#a02422' %}) represented in decimal:
+
+```json
+{"ty":"fl","c":{"a":0,"k":[0.627,0.263,0.133],"ix":2}}
+```
+
+By changing the text, I can (tediously) create a *"[Blue Origin](https://www.blueorigin.com/)"* themed rocket, recolored from Google Noto's animated emojis. In this case, I used <https://lottielab.com> to do the job quicker.
+
+| Normal | Modified |
+|:------:|:---------:|
+| ![Normal Lottie](/assets/rocket.gif) | ![Modified Lottie](/assets/rocket-blue.gif) |
+
+*Attribution: '[Rocket](https://googlefonts.github.io/noto-emoji-animation/?selected=Animated%20Emoji%3Aemoji_u1f680%3A)', by Google Fonts*. Modified by Spencer C. Imbleau using [LottieLab](https://lottielab.com).
+
+I think the LSS format is quite good, and makes this easier than plain text editing. There may be a market need for good dotLottie tooling here.
 
 ## The elephant in the room: Rive
 
@@ -156,18 +178,19 @@ Rive has all the staples of dotLottie, such as state machines and transitions, b
 {% include rive-frame.html id='demo' src=page.riveDemo statemachine='bumpy' %}
 *Attribution: 'Vehicles' example from [Rive](https://rive.app)*
 
-### State blending
+### State machines with state blending
 
-Rive has great support for state machines, even offering visual blueprinting for state machines to users.
+Rive has advanced support for state machines, even offering visual blueprinting for state machines to users.
 
 ![State machine blueprinting](/assets/rive-blueprinting.png)
+
 
 But something uniquely "Rive" is state blending - the `.riv` format allows two states to be blended seamlessly. Here's an example showcasing the capability:
 
 {% include rive-frame.html id='walk' src=page.riveWalkBlend statemachine='State Machine 1'%}
 *Attribution: ['Walk Cycle Blend'](https://rive.app/community/7656-14740-walk-cycle-blend/) example from [@whereisross](https://rive.app/@whereisross/), CC By 4.0*
 
-This is a simple linear easing from one state to the next, and feels full of potential for user experience. This feature remains unparalleled in dotLottie.
+Under the hood, this is a linear easing from one state to the next, and feels full of potential for user experience. This feature remains unparalleled in dotLottie.
 
 ![Walk cycle blend](/assets/walk-blend.png)
 
@@ -269,3 +292,19 @@ SVG vs. Lottie state machines
 - Nesting animations (lottie)
 - Competition (LottieLab)
 - Make transitions more open-ended, allowing platform or custom transitions
+
+
+
+There seems to be a technology gap in creating and manipulating lottie files with code. There doesn't seem to be something quite as simple as the [PostScript API](https://en.wikipedia.org/wiki/Encapsulated_PostScript) for manipulating Lottie files.
+
+```eps
+% Example PostScript (EPS) code
+ newpath
+  63 153 moveto
+ 549 153 lineto
+ stroke
+```
+
+It's not easy to change a Lottie file with code, but that's where I find myself wanting to research the most. With some good effort put in a runtime, it would be possible to serve many audiences. Reducing engineer hours, "code artists," (using code as a base for creating digital art), and engineers wanting to generate or modify vector animations.
+
+Some examples would include vector particle generators, procedural fire, and the native animations Spotify manually created (e.g. adjusting sandwich layer height and text).
